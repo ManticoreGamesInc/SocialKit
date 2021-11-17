@@ -8,6 +8,18 @@ Assets {
         Name: "cs:ResourceName"
         String: "Coins"
       }
+      Overrides {
+        Name: "cs:StartValue"
+        Int: 20
+      }
+      Overrides {
+        Name: "cs:SecondsToWait"
+        Int: 60
+      }
+      Overrides {
+        Name: "cs:GainAmount"
+        Int: 1
+      }
     }
   }
   SerializationVersion: 101

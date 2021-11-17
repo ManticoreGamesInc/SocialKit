@@ -190,11 +190,10 @@ Objects {
     AddSizeToParentIfUsingParentSize: true
     UseParentWidth: true
     Text {
-      Label: "9,123,456"
       Color {
-        R: 0.133
-        G: 0.133
-        B: 0.133
+        R: 0.12
+        G: 0.12
+        B: 0.12
         A: 1
       }
       Size: 19
@@ -261,6 +260,7 @@ Objects {
   Control {
     Width: 60
     Height: 60
+    UIY: 1
     RotationAngle: -30
     RenderTransformPivot {
       Anchor {
@@ -280,10 +280,10 @@ Objects {
       TeamSettings {
       }
       ShadowColor {
-        A: 0.462
+        A: 0.321
       }
       ShadowOffset {
-        X: 1
+        X: 2
         Y: 1
       }
       ScreenshotIndex: 1
@@ -333,7 +333,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: -2
+    Width: 135
     Height: 12
     UIY: -1
     RenderTransformPivot {
@@ -341,8 +341,6 @@ Objects {
         Value: "mc:euianchor:middlecenter"
       }
     }
-    AddSizeToParentIfUsingParentSize: true
-    UseParentWidth: true
     Panel {
       Opacity: 1
     }
@@ -391,7 +389,6 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 100
     Height: 100
     RenderTransformPivot {
       Anchor {
@@ -400,6 +397,7 @@ Objects {
     }
     UseParentHeight: true
     Panel {
+      IsClipping: true
       Opacity: 1
     }
     AnchorLayout {
@@ -816,7 +814,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 200
+    Width: 500
     Height: 100
     RenderTransformPivot {
       Anchor {
@@ -1234,16 +1232,14 @@ Objects {
   ParentId: 15381206494992193055
   UnregisteredParameters {
     Overrides {
-      Name: "cs:BG"
-      ObjectReference {
-        SelfId: 15481073069192620095
-      }
-    }
-    Overrides {
       Name: "cs:Fill"
       ObjectReference {
         SelfId: 5442271163165376825
       }
+    }
+    Overrides {
+      Name: "cs:Percent"
+      Float: 0
     }
   }
   Collidable_v2 {
@@ -1787,6 +1783,10 @@ Objects {
   }
   ParentId: 12010494662016587432
   UnregisteredParameters {
+    Overrides {
+      Name: "cs:SecondsToWait"
+      Int: 60
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

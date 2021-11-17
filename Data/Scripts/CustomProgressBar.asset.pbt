@@ -5,11 +5,6 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:BG"
-        ObjectReference {
-        }
-      }
-      Overrides {
         Name: "cs:Fill"
         ObjectReference {
         }
