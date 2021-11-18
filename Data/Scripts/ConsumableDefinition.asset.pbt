@@ -25,14 +25,16 @@ Assets {
         Int: 1
       }
       Overrides {
-        Name: "cs:model"
+        Name: "cs:equipment"
         AssetReference {
           Id: 841534158063459245
         }
       }
       Overrides {
-        Name: "cs:AnimationType"
-        String: "Drink"
+        Name: "cs:model"
+        AssetReference {
+          Id: 841534158063459245
+        }
       }
       Overrides {
         Name: "cs:numberOfUses"

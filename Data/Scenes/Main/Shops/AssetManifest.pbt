@@ -8,12 +8,12 @@ Assets {
   }
 }
 Assets {
-  Id: 12839023638132340927
-  Name: "Cube - Bottom-Aligned"
+  Id: 13254226986252267120
+  Name: "Container - Rectangle Thin 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cube_001"
+    AssetId: "sm_container_rectangle_thin_ref"
   }
 }
 Assets {
@@ -62,6 +62,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7757866143058981948
+  Name: "Cube - Arched"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_arched_001"
+  }
+}
+Assets {
   Id: 4859886206042824344
   Name: "Baloo 2"
   PlatformAssetType: 28
@@ -95,6 +104,42 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "UI_Fantasy_Equip_Coins_004"
+  }
+}
+Assets {
+  Id: 2915731642596610032
+  Name: "Cube - Bottom-Aligned"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_001"
+  }
+}
+Assets {
+  Id: 2075125279631617252
+  Name: "Cube - 6 Toned"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prim_cube_6_toned_001_ref"
+  }
+}
+Assets {
+  Id: 1758388402481224558
+  Name: "Cube - Polished"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_hq_test_001"
+  }
+}
+Assets {
+  Id: 1447695845330508095
+  Name: "Wood Raw"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_wood_raw_001_uv"
   }
 }
 Assets {

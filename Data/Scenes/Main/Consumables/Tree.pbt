@@ -146,12 +146,18 @@ Objects {
     }
     Overrides {
       Name: "cs:cost"
-      Int: 1
+      Int: 0
     }
     Overrides {
       Name: "cs:model"
       AssetReference {
-        Id: 1675220947145476043
+        Id: 3453083037720269222
+      }
+    }
+    Overrides {
+      Name: "cs:equipment"
+      AssetReference {
+        Id: 1555474896595674657
       }
     }
   }

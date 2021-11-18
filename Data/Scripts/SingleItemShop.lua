@@ -1,7 +1,7 @@
 
 local SHOP_ID = script:GetCustomProperty("ShopID")
 local TRIGGER = script:GetCustomProperty("Trigger"):WaitForObject()
-local OUTER_TRIGGER = script:GetCustomProperty("OuterTrigger"):WaitForObject()
+local EXIT_TRIGGER = script:GetCustomProperty("OuterTrigger"):WaitForObject()
 
 local isInteractableLogic = TRIGGER.isInteractable
 
@@ -47,5 +47,5 @@ if isInteractableLogic then
 else
 	TRIGGER.beginOverlapEvent:Connect(OnBeginOverlap)
 end
-OUTER_TRIGGER.endOverlapEvent:Connect(OnEndOverlap)
+EXIT_TRIGGER.endOverlapEvent:Connect(OnEndOverlap)
 

@@ -14,7 +14,7 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:OuterTrigger"
+        Name: "cs:ExitTrigger"
         ObjectReference {
         }
       }

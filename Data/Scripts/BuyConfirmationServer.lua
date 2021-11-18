@@ -5,8 +5,12 @@ function OnCompleteBuy(player, itemId)
 	if itemDefinition 
 	and itemDefinition.cost <= player:GetResource("Coins")
 	then
-		local item = World.SpawnAsset(itemDefinition.model, {networkContext = NetworkContextType.NETWORKED})
+		local item = World.SpawnAsset(itemDefinition.equipment, {networkContext = NetworkContextType.NETWORKED})
+		item:SetCustomProperty("itemId", itemId)
+		item:SetCustomProperty("usesRemaining", itemDefinition.numberOfUses)
+		
 		item:Equip(player)
+		
 		player:RemoveResource("Coins", itemDefinition.cost)
 	end
 end
