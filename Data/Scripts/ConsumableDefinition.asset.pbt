@@ -21,11 +21,11 @@ Assets {
         String: "Food"
       }
       Overrides {
-        Name: "cs:price"
+        Name: "cs:cost"
         Int: 1
       }
       Overrides {
-        Name: "cs:model3D"
+        Name: "cs:model"
         AssetReference {
           Id: 841534158063459245
         }

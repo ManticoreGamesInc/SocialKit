@@ -25,16 +25,16 @@ Objects {
       String: "Hamburger"
     }
     Overrides {
-      Name: "cs:price"
-      Int: 3
-    }
-    Overrides {
       Name: "cs:numberOfUses"
       Int: 1
     }
     Overrides {
       Name: "cs:AnimationType"
       String: "Bite"
+    }
+    Overrides {
+      Name: "cs:cost"
+      Int: 3
     }
   }
   Collidable_v2 {
@@ -80,12 +80,18 @@ Objects {
       String: "Regular Coffee"
     }
     Overrides {
-      Name: "cs:price"
+      Name: "cs:numberOfUses"
+      Int: 3
+    }
+    Overrides {
+      Name: "cs:cost"
       Int: 2
     }
     Overrides {
-      Name: "cs:numberOfUses"
-      Int: 3
+      Name: "cs:model"
+      AssetReference {
+        Id: 1675220947145476043
+      }
     }
   }
   Collidable_v2 {
@@ -137,6 +143,16 @@ Objects {
     Overrides {
       Name: "cs:description"
       String: "The sweet delight of this snow cone both refreshes and cools you on a hot day."
+    }
+    Overrides {
+      Name: "cs:cost"
+      Int: 1
+    }
+    Overrides {
+      Name: "cs:model"
+      AssetReference {
+        Id: 1675220947145476043
+      }
     }
   }
   Collidable_v2 {
