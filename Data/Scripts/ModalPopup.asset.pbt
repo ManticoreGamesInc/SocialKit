@@ -20,6 +20,20 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:FadeColor"
+        Color {
+          A: 0.5
+        }
+      }
+      Overrides {
+        Name: "cs:MoveSpeed"
+        Float: 16
+      }
+      Overrides {
+        Name: "cs:OffScreenY"
+        Int: 850
+      }
+      Overrides {
         Name: "cs:MainPanel:isrep"
         Bool: false
       }

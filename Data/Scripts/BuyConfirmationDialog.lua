@@ -14,18 +14,24 @@ local player = Game.GetLocalPlayer()
 local itemDefinition = nil
 
 
-function Hide()
-	Events.Broadcast("ConfirmBuyHidden")
-	MODAL.Hide()
-end
-
 function OnConfirmBuyInvoked(itemDefinition)
 	UpdateContents(itemDefinition)
 	MODAL.Show()
 end
 
+function Hide()
+	MODAL.Hide()
+end
+
+function OnModalHidden(modal)
+	if modal == MODAL then
+		Events.Broadcast("ConfirmBuyHidden")
+	end
+end
+
 Events.Connect("ConfirmBuy", OnConfirmBuyInvoked)
 Events.Connect("CancelBuy", Hide)
+Events.Connect("ModalHidden", OnModalHidden)
 
 
 function CompleteTransaction()
