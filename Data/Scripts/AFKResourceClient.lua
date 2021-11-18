@@ -24,8 +24,22 @@ end
 
 
 function UpdateLabel(value)
-	--TODO: Format with commas
-	UI_TEXT.text = tostring(value)
+	value = CoreMath.Round(value)
+	if value <= 0 then
+		UI_TEXT.text = tostring(value)
+		return
+	end
+	local str = nil
+	while value > 0 do
+		local upto3digits = value % 1000
+		value = math.floor(value / 1000)
+		if str then
+			str = upto3digits .. "," .. str
+		else
+			str = tostring(upto3digits)
+		end
+	end
+	UI_TEXT.text = str
 end
 
 function OnResourceChanged(player, resName)

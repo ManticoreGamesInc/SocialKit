@@ -18,16 +18,31 @@ function SetupAFK(player)
 end
 
 
-function OnPlayerJoined(player)
+function Save(player)
 	local data = Storage.GetPlayerData(player)
-	
+	data[RESOURCE_NAME] = player:GetResource(RESOURCE_NAME)
+	Storage.SetPlayerData(player, data)
+end
+
+function Load(player)
+	local data = Storage.GetPlayerData(player)
 	local value = data[RESOURCE_NAME]
 	if not value then
 		value = START_VALUE
 	end
-	
 	player:SetResource(RESOURCE_NAME, value)
-	
+end
+
+
+function OnResourceChanged(player, resName)
+	if resName == RESOURCE_NAME then
+		Save(player)
+	end
+end
+
+function OnPlayerJoined(player)
+	Load(player)
+	player.resourceChangedEvent:Connect(OnResourceChanged)
 	SetupAFK(player)
 end
 

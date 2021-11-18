@@ -200,7 +200,6 @@ Objects {
       Justification {
         Value: "mc:etextjustify:left"
       }
-      AutoWrapText: true
       Font {
         Id: 18305181429646832465
       }
