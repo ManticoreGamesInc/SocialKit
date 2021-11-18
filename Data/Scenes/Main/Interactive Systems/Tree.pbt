@@ -1,6 +1,38 @@
 Name: "Interactive Systems"
 RootId: 2522544622353355839
 Objects {
+  Id: 7509570916075196283
+  Name: "Shop Common"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2522544622353355839
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Shop Common"
+  }
+}
+Objects {
   Id: 12010494662016587432
   Name: "AFKResource"
   Transform {
