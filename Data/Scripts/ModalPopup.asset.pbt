@@ -20,6 +20,16 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:OpenSFX"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:CloseSFX"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:FadeColor"
         Color {
           A: 0.5

@@ -45,6 +45,23 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:NoMoneyColor"
+        Color {
+          R: 1
+          A: 1
+        }
+      }
+      Overrides {
+        Name: "cs:BuySFX"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:ErrorSFX"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:YesButton:isrep"
         Bool: false
       }

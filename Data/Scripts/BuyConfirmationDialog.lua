@@ -9,6 +9,11 @@ local USES_TEXT = script:GetCustomProperty("UsesText"):WaitForObject()
 local RP_ICON = script:GetCustomProperty("RPIcon"):WaitForObject()
 local RP_TEXT = script:GetCustomProperty("RPText"):WaitForObject()
 local COST_TEXT = script:GetCustomProperty("CostText"):WaitForObject()
+local NO_MONEY_COLOR = script:GetCustomProperty("NoMoneyColor")
+local BUY_SFX = script:GetCustomProperty("BuySFX"):GetObject()
+local ERROR_SFX = script:GetCustomProperty("ErrorSFX"):GetObject()
+
+COST_TEXT.clientUserData.defaultColor = COST_TEXT:GetColor()
 
 local player = Game.GetLocalPlayer()
 local itemDefinition = nil
@@ -74,9 +79,9 @@ function UpdateContents(itemDef)
 		COST_TEXT.x = 0
 	end
 	if CanAfford() then
-		COST_TEXT:SetColor(Color.WHITE)
+		COST_TEXT:SetColor(COST_TEXT.clientUserData.defaultColor)
 	else
-		COST_TEXT:SetColor(CLOSE_BUTTON:GetButtonColor())
+		COST_TEXT:SetColor(NO_MONEY_COLOR)
 	end
 end
 
@@ -86,9 +91,9 @@ function OnYesPressed()
 		local success = CompleteTransaction()
 		if success then
 			Hide()
-			--TODO: Buy SFX
+			BUY_SFX:Play()
 		else
-			--TODO: Error SFX
+			ERROR_SFX:Play()
 		end
 	end
 end

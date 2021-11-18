@@ -2,6 +2,8 @@
 local MAIN_PANEL = script:GetCustomProperty("MainPanel"):WaitForObject()
 local OUTSIDE_BUTTON = script:GetCustomProperty("OutsideButton"):WaitForObject()
 local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
+local OPEN_SFX = script:GetCustomProperty("OpenSFX"):GetObject()
+local CLOSE_SFX = script:GetCustomProperty("CloseSFX"):GetObject()
 local FADE_COLOR = script:GetCustomProperty("FadeColor")
 local MOVE_SPEED = script:GetCustomProperty("MoveSpeed")
 local OFF_Y = script:GetCustomProperty("OffScreenY")
@@ -15,6 +17,9 @@ elapsedTime = 0
 
 
 function Show()
+	if OPEN_SFX then
+		OPEN_SFX:Play()
+	end
 	SetState(STATE_IN)
 end
 
@@ -75,23 +80,13 @@ function UpdateFadeColor()
 end
 
 
-function OnYesPressed()
-	if currentState == STATE_IDLE then
-		local success = CompleteTransaction()
-		if success then
-			Hide()
-			--TODO: Buy SFX
-		else
-			--TODO: Error SFX
-		end
-	end
-end
-
 function OnClosePressed()
 	if currentState == STATE_IDLE
 	or (currentState == STATE_IN and elapsedTime >= 0.15) then
 		Hide()
-		--TODO: Click SFX
+		if CLOSE_SFX then
+			CLOSE_SFX:Play()
+		end
 	end
 end
 

@@ -2681,6 +2681,8 @@ Objects {
     }
   }
   ParentId: 5152536229461885316
+  ChildIds: 8167423015560630679
+  ChildIds: 14316161343337296660
   UnregisteredParameters {
     Overrides {
       Name: "cs:MainPanel"
@@ -2698,6 +2700,18 @@ Objects {
       Name: "cs:CloseButton"
       ObjectReference {
         SelfId: 5235821622411878610
+      }
+    }
+    Overrides {
+      Name: "cs:OpenSFX"
+      ObjectReference {
+        SelfId: 8167423015560630679
+      }
+    }
+    Overrides {
+      Name: "cs:CloseSFX"
+      ObjectReference {
+        SelfId: 14316161343337296660
       }
     }
   }
@@ -2720,6 +2734,79 @@ Objects {
   }
 }
 Objects {
+  Id: 14316161343337296660
+  Name: "Clunky Click 01 SFX"
+  Transform {
+    Location {
+      Z: 200
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9187893623048362664
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 11237709767285311165
+    }
+    Volume: 0.499315917
+    Falloff: -1
+    Radius: -1
+  }
+}
+Objects {
+  Id: 8167423015560630679
+  Name: "Paper Book Open Close Page 01 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9187893623048362664
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 11185396967810392362
+    }
+    Volume: 1
+    Falloff: -1
+    Radius: -1
+  }
+}
+Objects {
   Id: 18340901049754910740
   Name: "BuyConfirmationDialog"
   Transform {
@@ -2734,6 +2821,8 @@ Objects {
     }
   }
   ParentId: 5152536229461885316
+  ChildIds: 5617360749216139149
+  ChildIds: 1552928263139601215
   UnregisteredParameters {
     Overrides {
       Name: "cs:YesButton"
@@ -2783,6 +2872,27 @@ Objects {
         SelfId: 9187893623048362664
       }
     }
+    Overrides {
+      Name: "cs:BuySFX"
+      ObjectReference {
+        SelfId: 5617360749216139149
+      }
+    }
+    Overrides {
+      Name: "cs:ErrorSFX"
+      ObjectReference {
+        SelfId: 1552928263139601215
+      }
+    }
+    Overrides {
+      Name: "cs:NoMoneyColor"
+      Color {
+        R: 1
+        G: 0.108999968
+        B: 0.108999968
+        A: 1
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2800,5 +2910,78 @@ Objects {
     ScriptAsset {
       Id: 17697609862071364954
     }
+  }
+}
+Objects {
+  Id: 1552928263139601215
+  Name: "Buy SFX Error"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 18340901049754910740
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 10635714492875966600
+    }
+    Volume: 1
+    Falloff: 5000
+    Radius: 500
+  }
+}
+Objects {
+  Id: 5617360749216139149
+  Name: "Cash Register Purchase 03 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 18340901049754910740
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 4161279750008765059
+    }
+    Pitch: 305
+    Volume: 1
+    Falloff: -1
+    Radius: -1
   }
 }
