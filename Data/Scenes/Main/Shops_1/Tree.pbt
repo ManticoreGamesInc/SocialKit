@@ -24,6 +24,10 @@ Objects {
       Name: "cs:displayName"
       String: "Snow Cone Kiosk"
     }
+    Overrides {
+      Name: "cs:itemId"
+      String: "snow_cone"
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

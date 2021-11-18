@@ -1420,7 +1420,7 @@ Objects {
         B: 0.138000011
         A: 1
       }
-      Size: 28
+      Size: 26
       Justification {
         Value: "mc:etextjustify:center"
       }

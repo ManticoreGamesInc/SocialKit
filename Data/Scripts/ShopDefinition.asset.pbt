@@ -12,6 +12,10 @@ Assets {
         Name: "cs:displayName"
         String: ""
       }
+      Overrides {
+        Name: "cs:itemId"
+        String: ""
+      }
     }
   }
   SerializationVersion: 101

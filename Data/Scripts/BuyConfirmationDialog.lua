@@ -21,7 +21,7 @@ local elapsedTime = 0
 
 
 function CompleteTransaction()
-	
+	-- TODO
 end
 
 
@@ -30,14 +30,23 @@ function Show()
 end
 
 function Hide()
+	Events.Broadcast("ConfirmBuyHidden")
 	SetState(STATE_OUT)
 end
 
 
-function OnConfirmBuy()
-print("OnConfirmBuy")
-	-- TODO : Populate data
-	
+function OnConfirmBuy(itemData)
+	DISPLAY_NAME.text = itemData.displayName
+	DESCRIPTION.text = itemData.description
+	USES_TEXT.text = "Uses: " .. itemData.numberOfUses
+	if itemData.rpGained > 0 then
+		RP_ICON.visibility = Visibility.INHERIT
+		RP_TEXT.visibility = Visibility.INHERIT
+		RP_TEXT.text = "+" .. itemData.rpGained
+	else
+		RP_ICON.visibility = Visibility.FORCE_OFF
+		RP_TEXT.visibility = Visibility.FORCE_OFF
+	end
 	Show()
 end
 Events.Connect("ConfirmBuy", OnConfirmBuy)

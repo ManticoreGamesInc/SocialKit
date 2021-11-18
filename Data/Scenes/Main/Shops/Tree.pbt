@@ -20,6 +20,7 @@ Objects {
   ParentId: 13859047304914946921
   ChildIds: 1610583518543872433
   ChildIds: 2579220535599958963
+  ChildIds: 3925387886938970048
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -36,6 +37,43 @@ Objects {
   }
 }
 Objects {
+  Id: 3925387886938970048
+  Name: "Outer Trigger"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 5
+      Y: 5
+      Z: 5
+    }
+  }
+  ParentId: 5149009048989932514
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
   Id: 2579220535599958963
   Name: "Trigger"
   Transform {
@@ -44,9 +82,9 @@ Objects {
     Rotation {
     }
     Scale {
-      X: 2.48475337
-      Y: 2.48475337
-      Z: 2.48475337
+      X: 2.5
+      Y: 2.5
+      Z: 2.5
     }
   }
   ParentId: 5149009048989932514
@@ -64,6 +102,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Trigger {
+    Interactable: true
     TeamSettings {
       IsTeamCollisionEnabled: true
       IsEnemyCollisionEnabled: true
@@ -153,6 +192,12 @@ Objects {
     Overrides {
       Name: "cs:ShopID"
       String: "snow_cone"
+    }
+    Overrides {
+      Name: "cs:OuterTrigger"
+      ObjectReference {
+        SelfId: 3925387886938970048
+      }
     }
   }
   Collidable_v2 {

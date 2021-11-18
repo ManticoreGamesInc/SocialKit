@@ -134,6 +134,10 @@ Objects {
       Name: "cs:numberOfUses"
       Int: 2
     }
+    Overrides {
+      Name: "cs:description"
+      String: "The sweet delight of this snow cone both refreshes and cools you on a hot day."
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

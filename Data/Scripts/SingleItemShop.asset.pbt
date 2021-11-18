@@ -13,6 +13,11 @@ Assets {
         ObjectReference {
         }
       }
+      Overrides {
+        Name: "cs:OuterTrigger"
+        ObjectReference {
+        }
+      }
     }
   }
   SerializationVersion: 101
