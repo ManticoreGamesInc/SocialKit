@@ -6,22 +6,15 @@
 
 local EQUIPMENT = script.parent
 
-local STANCE = "unarmed_carry_object_low"
+local STANCE = script:GetCustomProperty("AnimationStance")
+local BINDING = script:GetCustomProperty("ActionBinding")
 
 local pressedListener = nil
 local releasedListener = nil
 
 
-function GrantRP(player)
-	local itemId = EQUIPMENT:GetCustomProperty("itemId")
-	local itemDefinition = _G.Consumables.GetDefinition(itemId)
-	if itemDefinition and itemDefinition.rpGained > 0 then
-		player:GrantRewardPoints(itemDefinition.rpGained, "MyRP")
-	end
-end
-
 function OnBindingPressed(player, action)
-	if action == "ability_primary" then
+	if action == BINDING then
 		EQUIPMENT:SetCustomProperty("isActive", true)
 		
 		local usesRemaining = EQUIPMENT:GetCustomProperty("usesRemaining")
@@ -31,11 +24,12 @@ end
 
 
 function OnBindingReleased(player, action)
-	if action == "ability_primary" then
+	if action == BINDING then
 		EQUIPMENT:SetCustomProperty("isActive", false)
 		
 		if EQUIPMENT:GetCustomProperty("usesRemaining") <= 0 then
-			GrantRP(player)
+			local itemId = EQUIPMENT:GetCustomProperty("itemId")
+			Events.Broadcast("ItemConsumed", player, itemId)
 			EQUIPMENT:Destroy()
 		end
 	end

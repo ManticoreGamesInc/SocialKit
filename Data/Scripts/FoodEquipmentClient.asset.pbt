@@ -5,6 +5,11 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
+        Name: "cs:ServerScript"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:ModelRoot"
         ObjectReference {
         }

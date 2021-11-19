@@ -181,6 +181,12 @@ Assets {
             Name: "cs:PrimaryChance"
             Float: 0.2
           }
+          Overrides {
+            Name: "cs:ServerScript"
+            ObjectReference {
+              SubObjectId: 3807918045201516918
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
