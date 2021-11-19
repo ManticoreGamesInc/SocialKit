@@ -10,6 +10,8 @@ local EXIT_TRIGGER = script:GetCustomProperty("ExitTrigger"):WaitForObject()
 
 local isInteractableLogic = TRIGGER.isInteractable
 
+local PLAYER = Game.GetLocalPlayer()
+
 Task.Wait()
 
 local shopDefinition = _G.Shops.GetDefinition(SHOP_ID)
@@ -18,19 +20,21 @@ TRIGGER.interactionLabel = shopDefinition.displayName
 
 
 function OnInteracted(trigger, player)
+	if player ~= PLAYER then return end
+	
 	Events.Broadcast("ShowCategoryShop", shopDefinition)
 	
 	TRIGGER.isInteractable = false
 end
 
 function OnBeginOverlap(trigger, player)
-	if not player:IsA("Player") then return end
+	if player ~= PLAYER then return end
 	
 	Events.Broadcast("ShowCategoryShop", shopDefinition)
 end
 
 function OnEndOverlap(trigger, player)
-	if not player:IsA("Player") then return end
+	if player ~= PLAYER then return end
 	
 	Events.Broadcast("CancelBuy")
 	Events.Broadcast("HideCategoryShop")
