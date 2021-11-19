@@ -185,6 +185,12 @@ Assets {
               SubObjectId: 16325464028562992451
             }
           }
+          Overrides {
+            Name: "cs:ServerScript"
+            ObjectReference {
+              SubObjectId: 3807918045201516918
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"

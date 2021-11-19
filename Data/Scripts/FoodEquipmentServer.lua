@@ -6,22 +6,16 @@
 
 local EQUIPMENT = script.parent
 
-local STANCE = "unarmed_carry_object_low"
+local STANCE = script:GetCustomProperty("AnimationStance")
+local BINDING = script:GetCustomProperty("ActionBinding")
 
 local pressedListener = nil
 local releasedListener = nil
+local leftListener = nil
 
-
-function GrantRP(player)
-	local itemId = EQUIPMENT:GetCustomProperty("itemId")
-	local itemDefinition = _G.Consumables.GetDefinition(itemId)
-	if itemDefinition and itemDefinition.rpGained > 0 then
-		player:GrantRewardPoints(itemDefinition.rpGained, "MyRP")
-	end
-end
 
 function OnBindingPressed(player, action)
-	if action == "ability_primary" then
+	if action == BINDING then
 		EQUIPMENT:SetCustomProperty("isActive", true)
 		
 		local usesRemaining = EQUIPMENT:GetCustomProperty("usesRemaining")
@@ -31,11 +25,12 @@ end
 
 
 function OnBindingReleased(player, action)
-	if action == "ability_primary" then
+	if action == BINDING then
 		EQUIPMENT:SetCustomProperty("isActive", false)
 		
 		if EQUIPMENT:GetCustomProperty("usesRemaining") <= 0 then
-			GrantRP(player)
+			local itemId = EQUIPMENT:GetCustomProperty("itemId")
+			Events.Broadcast("ItemConsumed", player, itemId)
 			EQUIPMENT:Destroy()
 		end
 	end
@@ -55,8 +50,19 @@ function OnUnequippedEvent(equipment, player)
 	if not Object.IsValid(script) then return end
 	
 	_G.StanceStack.Remove(player, STANCE, script.id)
+	
+	if Object.IsValid(equipment) then
+		equipment:Destroy()
+	end
 end
 EQUIPMENT.unequippedEvent:Connect(OnUnequippedEvent)
+
+leftListener = Game.playerLeftEvent:Connect(function(player)
+	if Object.IsValid(EQUIPMENT)
+	and player == EQUIPMENT.owner then
+		EQUIPMENT:Destroy()
+	end
+end)
 
 script.destroyEvent:Connect(function()
 	if Object.IsValid(EQUIPMENT)
@@ -73,6 +79,10 @@ script.destroyEvent:Connect(function()
 	if releasedListener then
 		releasedListener:Disconnect()
 		releasedListener = nil
+	end
+	if leftListener then
+		leftListener:Disconnect()
+		leftListener = nil
 	end
 end)
 

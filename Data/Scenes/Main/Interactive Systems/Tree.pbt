@@ -1,6 +1,32 @@
 Name: "Interactive Systems"
 RootId: 2522544622353355839
 Objects {
+  Id: 457641381510777163
+  Name: "Grant RP on Item Consume"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2522544622353355839
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 503836854771225076
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Grant RP on Item Consume"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 11411466026097449098
+    }
+  }
+}
+Objects {
   Id: 12010494662016587432
   Name: "AFKResource"
   Transform {

@@ -5,6 +5,7 @@
 --]]
 
 local EQUIPMENT = script:FindAncestorByType("Equipment")
+local SERVER_SCRIPT = script:GetCustomProperty("ServerScript"):WaitForObject()
 local MODEL_ROOT = script:GetCustomProperty("ModelRoot"):WaitForObject()
 local IK_ROOT = script:GetCustomProperty("IKRoot"):WaitForObject()
 local IK_ANCHOR = script:GetCustomProperty("IKAnchor"):WaitForObject()
@@ -13,7 +14,7 @@ local PRIMARY_CHANCE = script:GetCustomProperty("PrimaryChance")
 local SECONDARY_SFX = script:GetCustomProperty("SecondarySFX"):GetObject()
 local SECONDARY_PERIOD = script:GetCustomProperty("SecondaryPeriod")
 
-local RP_COLOR = Color.New(0.18, 0.09, 0.36)
+local BINDING = SERVER_SCRIPT:GetCustomProperty("ActionBinding")
 
 local PLAYER = Game.GetLocalPlayer()
 
@@ -25,17 +26,6 @@ local secondaryCountdown = 0
 
 local pressedListener = nil
 local releasedListener = nil
-
-
-function GrantRP()
-	local itemDefinition = _G.Consumables.GetDefinition(itemId)
-	if itemDefinition and itemDefinition.rpGained > 0 then
-		local message = "+".. itemDefinition.rpGained .." RP"
-		local pos = PLAYER:GetWorldPosition() + Vector3.UP * 100
-		local params = {color = RP_COLOR, isBig = true, duration = 1.5}
-		UI.ShowFlyUpText(message, pos, params)
-	end
-end
 
 
 function Tick(deltaTime)
@@ -76,7 +66,7 @@ end
 function OnBindingPressed(player, action)
 	if player ~= EQUIPMENT.owner then return end
 	
-	if action == "ability_primary" then
+	if action == BINDING then
 		Start()
 	end
 end
@@ -86,7 +76,7 @@ pressedListener = PLAYER.bindingPressedEvent:Connect(OnBindingPressed)
 function OnBindingReleased(player, action)
 	if player ~= EQUIPMENT.owner then return end
 	
-	if action == "ability_primary" then
+	if action == BINDING then
 		Stop()
 	end
 end
@@ -129,11 +119,6 @@ end)
 
 
 script.destroyEvent:Connect(function()
-	print("Destroy. usesRemaining = " .. usesRemaining)
-	if usesRemaining <= 1 then
-		GrantRP()
-	end
-	
 	if Object.IsValid(EQUIPMENT.owner) then
 		_G.IkStack.Remove(EQUIPMENT.owner, IK_ANCHOR)
 	end
