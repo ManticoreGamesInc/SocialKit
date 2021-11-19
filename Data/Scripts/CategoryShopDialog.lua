@@ -46,6 +46,7 @@ end
 
 Events.Connect("ShowCategoryShop", OnShowCategoryShop)
 Events.Connect("HideCategoryShop", Hide)
+Events.Connect("CompleteBuy", Hide)
 Events.Connect("ModalHidden", OnModalHidden)
 
 

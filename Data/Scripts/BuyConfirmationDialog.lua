@@ -46,6 +46,7 @@ Events.Connect("ModalHidden", OnModalHidden)
 function CompleteTransaction()
 	if CanAfford() then
 		Events.BroadcastToServer("CompleteBuy", itemDefinition.id)
+		Events.Broadcast("CompleteBuy", itemDefinition.id)
 		return true
 	end
 	return false
