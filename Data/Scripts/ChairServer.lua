@@ -8,7 +8,9 @@ local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local GET_UP_PRIMARY_BINDING = script:GetCustomProperty("GetUpPrimaryBinding")
 local GET_UP_SECONDARY_BINDING = script:GetCustomProperty("GetUpSecondaryBinding")
 
-local EVENT_ID = "sit_"..ROOT.id
+local SIT_EVENT_ID = "sit_"..ROOT.id
+local GET_UP_EVENT_ID = "get_up_"..ROOT.id
+
 local STANCE = "unarmed_sit_chair_upright"
 
 local sittingPlayer = nil
@@ -32,8 +34,6 @@ function GetUp()
 	
 	CleanupListeners()
 	
-	Task.Wait(0.15)
-	if not Object.IsValid(player) then return end
 	player.maxJumpCount = originalJumpCount
 end
 
@@ -76,7 +76,8 @@ function OnSit(player)
 	getUpFBlocked = false
 end
 
-Events.ConnectForPlayer(EVENT_ID, OnSit)
+Events.ConnectForPlayer(SIT_EVENT_ID, OnSit)
+Events.ConnectForPlayer(GET_UP_EVENT_ID, GetUp)
 
 
 function CleanupListeners()

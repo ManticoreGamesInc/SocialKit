@@ -1784,6 +1784,15 @@ Objects {
         }
       }
     }
+    ParameterOverrideMap {
+      key: 16009078327658919335
+      value {
+        Overrides {
+          Name: "Interactable"
+          Bool: false
+        }
+      }
+    }
     TemplateAsset {
       Id: 3599235406971010506
     }
