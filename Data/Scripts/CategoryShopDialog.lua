@@ -9,15 +9,17 @@ MODAL = MODAL.context
 
 local SHOP_NAME = script:GetCustomProperty("ShopName"):WaitForObject()
 local SELECT_SFX = script:GetCustomProperty("SelectSFX"):GetObject()
-local ROW_PARENT = script:GetCustomProperty("RowParent"):WaitForObject()
-local ROW_TEMPLATE = script:GetCustomProperty("RowTemplate")
-local FIRST_ROW_Y = script:GetCustomProperty("FirstRowY")
+local PROTOTYPE_ROW = script:GetCustomProperty("PrototypeRow"):WaitForObject()
 
+local ROW_TEMPLATE = PROTOTYPE_ROW.sourceTemplateId
+local FIRST_ROW_Y = PROTOTYPE_ROW.y
+local ROW_PARENT = PROTOTYPE_ROW.parent
 ROW_PARENT.clientUserData.initialHeight = ROW_PARENT.height
+
 local player = Game.GetLocalPlayer()
 
 local activeRows = {}
-local rowPool = {}
+local rowPool = {PROTOTYPE_ROW}
 
 
 function OnShowCategoryShop(shopDefinition)
@@ -87,9 +89,14 @@ function GetRow()
 		return row
 	end
 	row = World.SpawnAsset(ROW_TEMPLATE, {parent = ROW_PARENT})
-	row:GetCustomProperty("UIButton"):WaitForObject().clickedEvent:Connect(OnRowClicked, row)
+	ConnectRowButtonClick(row)
 	return row
 end
+
+function ConnectRowButtonClick(row)
+	row:GetCustomProperty("UIButton"):WaitForObject().clickedEvent:Connect(OnRowClicked, row)
+end
+ConnectRowButtonClick(PROTOTYPE_ROW)
 
 function RecycleRows()
 	for _,row in ipairs(activeRows) do

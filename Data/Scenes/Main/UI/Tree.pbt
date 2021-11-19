@@ -2964,12 +2964,6 @@ Objects {
             Yaw: -61.8111038
           }
         }
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
-        }
       }
     }
     TemplateAsset {
@@ -3780,9 +3774,12 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:RowParent"
+      Name: "cs:PrototypeRow"
       ObjectReference {
-        SelfId: 9300846986988357973
+        SelfId: 14283797812509795865
+        SubObjectId: 3141022660790103052
+        InstanceId: 6196190120373983513
+        TemplateId: 9965839645836667179
       }
     }
   }

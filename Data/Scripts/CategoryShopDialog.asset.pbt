@@ -20,19 +20,25 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:RowParent"
+        Name: "cs:PrototypeRow"
         ObjectReference {
         }
       }
       Overrides {
-        Name: "cs:RowTemplate"
-        AssetReference {
-          Id: 9965839645836667179
-        }
+        Name: "cs:PrototypeRow:tooltip"
+        String: "A template for the shop rows, except it\'s already inside the panel. From this we can spawn other rows and know the layout details."
       }
       Overrides {
-        Name: "cs:FirstRowY"
-        Int: 90
+        Name: "cs:SelectSFX:tooltip"
+        String: "Sound that is played when a row is selected."
+      }
+      Overrides {
+        Name: "cs:ShopName:tooltip"
+        String: "UI Text that will receive the name of the shop."
+      }
+      Overrides {
+        Name: "cs:ModalPopup:tooltip"
+        String: "A reference to the Modal Popup component that accompanies this UI."
       }
     }
   }
