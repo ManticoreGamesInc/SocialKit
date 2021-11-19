@@ -19,7 +19,6 @@ Objects {
   ChildIds: 17890896660001401432
   ChildIds: 2522544622353355839
   ChildIds: 17832993586013553019
-  ChildIds: 2094574235324573011
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -32,40 +31,6 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
-  }
-}
-Objects {
-  Id: 2094574235324573011
-  Name: "RP Gift Box"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 6567632116159003248
-      value {
-        Overrides {
-          Name: "Name"
-          String: "RP Gift Box"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -160.586685
-            Y: 788.320679
-            Z: 5.00000143
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 16638878546329499976
-    }
   }
 }
 Objects {
