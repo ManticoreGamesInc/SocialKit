@@ -32,8 +32,8 @@ function Hide()
 	if currentState == STATE_IN
 	or currentState == STATE_IDLE
 	then
-		Events.Broadcast("ModalHidden", script.context)
 		SetState(STATE_OUT)
+		Events.Broadcast("ModalHidden", script.context)
 	end
 end
 

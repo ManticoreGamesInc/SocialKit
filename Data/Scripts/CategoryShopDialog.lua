@@ -35,11 +35,15 @@ end
 function OnModalHidden(modal)
 	if modal == MODAL then
 		Events.Broadcast("CategoryShopHidden")
+	
+	elseif MODAL.currentState == MODAL.STATE_IDLE then
+		UI.SetCursorVisible(true)
+		UI.SetCanCursorInteractWithUI(true)
 	end
 end
 
 Events.Connect("ShowCategoryShop", OnShowCategoryShop)
-Events.Connect("CancelBuy", Hide)
+Events.Connect("HideCategoryShop", Hide)
 Events.Connect("ModalHidden", OnModalHidden)
 
 
@@ -55,6 +59,8 @@ function UpdateContents(itemDefs)
 		table.insert(activeRows, row)
 		row.y = y
 		
+		row.clientUserData.itemDefinition = def
+		
 		row:GetCustomProperty("DisplayName"):WaitForObject().text = def.displayName
 		row:GetCustomProperty("CostText"):WaitForObject().text = tostring(def.cost)
 		row:GetCustomProperty("UsesText"):WaitForObject().text = "Uses: "..def.numberOfUses
@@ -67,8 +73,9 @@ function UpdateContents(itemDefs)
 end
 
 
-function OnRowClicked()
-	
+function OnRowClicked(button, row)
+	local itemDefinition = row.clientUserData.itemDefinition
+	Events.Broadcast("ShowConfirmBuy", row.clientUserData.itemDefinition)
 end
 
 
