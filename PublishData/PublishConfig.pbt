@@ -6,7 +6,7 @@ IsOpenForEdit: true
 Tags: "SocialHub"
 Tags: "Multiplayer"
 Tags: "Other"
-ScreenshotPaths: "C:/Users/gbsus/Documents/My Games/CORE/Saved/Maps/SocialKit/Screenshots/Screenshot0001.png"
+ScreenshotPaths: "C:\\Users\\gbsus\\Documents\\My Games\\CORE\\Saved\\Maps\\SocialKit\\Screenshots\\Core Social Kit SS v1.jpg"
 OwnerId: "bd602d5201b04b3fbf7be10f59c8f974"
 SerializationVersion: 2
 SceneNameToSceneIdMap {
