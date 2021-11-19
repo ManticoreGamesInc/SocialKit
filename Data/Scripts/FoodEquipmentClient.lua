@@ -9,6 +9,7 @@ local SERVER_SCRIPT = script:GetCustomProperty("ServerScript"):WaitForObject()
 local MODEL_ROOT = script:GetCustomProperty("ModelRoot"):WaitForObject()
 local IK_ROOT = script:GetCustomProperty("IKRoot"):WaitForObject()
 local IK_ANCHOR = script:GetCustomProperty("IKAnchor"):WaitForObject()
+local IK_BONE = script:GetCustomProperty("IKBone"):WaitForObject()
 local PRIMARY_SFX = script:GetCustomProperty("PrimarySFX"):GetObject()
 local PRIMARY_CHANCE = script:GetCustomProperty("PrimaryChance")
 local SECONDARY_SFX = script:GetCustomProperty("SecondarySFX"):GetObject()
@@ -46,7 +47,7 @@ function Start()
 	isActive = true
 	secondaryCountdown = SECONDARY_PERIOD
 	
-	IK_ROOT:AttachToPlayer(EQUIPMENT.owner, "head")
+	IK_ROOT:AttachToPlayer(EQUIPMENT.owner, IK_BONE)
 	_G.IkStack.Add(EQUIPMENT.owner, IK_ANCHOR)
 	
 	-- Random chance to play the primary sound

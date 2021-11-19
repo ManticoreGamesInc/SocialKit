@@ -25,6 +25,10 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:IKBone"
+        String: "head"
+      }
+      Overrides {
         Name: "cs:PrimarySFX"
         ObjectReference {
         }
