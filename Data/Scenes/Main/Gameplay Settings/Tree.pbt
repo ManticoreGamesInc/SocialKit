@@ -97,10 +97,11 @@ Objects {
     UseAsDefault: true
     AttachToLocalPlayer: true
     InitialDistance: 400
-    MinDistance: 300
-    MaxDistance: 600
+    IsDistanceAdjustable: true
+    MinDistance: 200
+    MaxDistance: 800
     PositionOffset {
-      Y: 60
+      Y: 40
     }
     RotationOffset {
     }
