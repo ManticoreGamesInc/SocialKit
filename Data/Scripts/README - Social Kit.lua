@@ -8,6 +8,9 @@ by: standardcombo, Slinkous
 	The Social Kit allows you to build a roleplay-driven social space where commerce thrives, 
 	creating consumable objects that players can buy, and use as part of the ways to interact 
 	with the game.
+	
+	This project is available open-source at:
+	https://github.com/ManticoreGamesInc/SocialKit.git
 
 
 TABLE OF CONTENTS
