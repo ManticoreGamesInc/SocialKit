@@ -84,7 +84,11 @@ function OnInteracted(trigger, player)
 	Events.BroadcastToServer(SIT_EVENT_ID)
 	
 	Task.Wait(GET_UP_DELAY)
-	if Object.IsValid(player) and activePlayer == player then
+	if Object.IsValid(player) 
+	and activePlayer == player 
+	and activePlayer == Game.GetLocalPlayer()
+	and not movementHook
+	then
 		movementHook = player.movementHook:Connect(OnPlayerMovement)
 	end
 end

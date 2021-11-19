@@ -18,8 +18,8 @@ local originalJumpCount = 1
 local getUpFBlocked = false
 
 
-function GetUp()
-	local player = sittingPlayer
+function GetUp(player)
+	if player ~= sittingPlayer then return end
 	sittingPlayer = nil
 	
 	if not Object.IsValid(player) then return end
@@ -40,7 +40,7 @@ end
 function OnBindingPressed(player, action)
 	if action == GET_UP_SECONDARY_BINDING
 	or (action == GET_UP_PRIMARY_BINDING and not getUpFBlocked) then
-		GetUp()
+		GetUp(player)
 	end
 end
 
@@ -55,7 +55,7 @@ function OnSit(player)
 	
 	if player.serverUserData.chairScript then
 		-- Get up from previous chair
-		player.serverUserData.chairScript.context.GetUp()
+		player.serverUserData.chairScript.context.GetUp(player)
 	end
 	player.serverUserData.chairScript = script
 	
