@@ -11,6 +11,7 @@ local BINDING = script:GetCustomProperty("ActionBinding")
 
 local pressedListener = nil
 local releasedListener = nil
+local leftListener = nil
 
 
 function OnBindingPressed(player, action)
@@ -49,8 +50,19 @@ function OnUnequippedEvent(equipment, player)
 	if not Object.IsValid(script) then return end
 	
 	_G.StanceStack.Remove(player, STANCE, script.id)
+	
+	if Object.IsValid(equipment) then
+		equipment:Destroy()
+	end
 end
 EQUIPMENT.unequippedEvent:Connect(OnUnequippedEvent)
+
+leftListener = Game.playerLeftEvent:Connect(function(player)
+	if Object.IsValid(EQUIPMENT)
+	and player == EQUIPMENT.owner then
+		EQUIPMENT:Destroy()
+	end
+end)
 
 script.destroyEvent:Connect(function()
 	if Object.IsValid(EQUIPMENT)
@@ -67,6 +79,10 @@ script.destroyEvent:Connect(function()
 	if releasedListener then
 		releasedListener:Disconnect()
 		releasedListener = nil
+	end
+	if leftListener then
+		leftListener:Disconnect()
+		leftListener = nil
 	end
 end)
 
