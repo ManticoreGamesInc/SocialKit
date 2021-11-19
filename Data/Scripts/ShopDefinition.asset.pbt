@@ -16,6 +16,10 @@ Assets {
         Name: "cs:itemId"
         String: ""
       }
+      Overrides {
+        Name: "cs:category"
+        String: ""
+      }
     }
   }
   SerializationVersion: 101

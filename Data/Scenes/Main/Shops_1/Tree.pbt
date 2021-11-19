@@ -1,6 +1,53 @@
 Name: "Shops_1"
 RootId: 18362861916812040693
 Objects {
+  Id: 17127068749134998545
+  Name: "Food Station"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 18362861916812040693
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:id"
+      String: "food_station"
+    }
+    Overrides {
+      Name: "cs:displayName"
+      String: "Food Station"
+    }
+    Overrides {
+      Name: "cs:category"
+      String: "Food"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 15604176976842919284
+    }
+  }
+}
+Objects {
   Id: 8823607715773150772
   Name: "Coffee Shop"
   Transform {

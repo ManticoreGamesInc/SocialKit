@@ -24,14 +24,18 @@ function Show()
 end
 
 function Hide()
-	Events.Broadcast("ModalHidden", script.context)
-	SetState(STATE_OUT)
+	if currentState == STATE_IN
+	or currentState == STATE_IDLE
+	then
+		Events.Broadcast("ModalHidden", script.context)
+		SetState(STATE_OUT)
+	end
 end
 
 function SetState(newState)
 	if newState == STATE_HIDDEN then
 		MAIN_PANEL.visibility = Visibility.FORCE_OFF
-		OUTSIDE_BUTTON.visibility = Visibility.INHERIT
+		OUTSIDE_BUTTON.visibility = Visibility.FORCE_OFF
 		
 	elseif newState == STATE_IN then
 		MAIN_PANEL.visibility = Visibility.INHERIT

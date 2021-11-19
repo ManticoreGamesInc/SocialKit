@@ -6,7 +6,6 @@ local YES_BUTTON = script:GetCustomProperty("YesButton"):WaitForObject()
 local DISPLAY_NAME = script:GetCustomProperty("DisplayName"):WaitForObject()
 local DESCRIPTION = script:GetCustomProperty("Description"):WaitForObject()
 local USES_TEXT = script:GetCustomProperty("UsesText"):WaitForObject()
-local RP_ICON = script:GetCustomProperty("RPIcon"):WaitForObject()
 local RP_TEXT = script:GetCustomProperty("RPText"):WaitForObject()
 local COST_TEXT = script:GetCustomProperty("CostText"):WaitForObject()
 local NO_MONEY_COLOR = script:GetCustomProperty("NoMoneyColor")
@@ -19,7 +18,7 @@ local player = Game.GetLocalPlayer()
 local itemDefinition = nil
 
 
-function OnConfirmBuyInvoked(itemDefinition)
+function OnShowConfirmBuy(itemDefinition)
 	UpdateContents(itemDefinition)
 	MODAL.Show()
 end
@@ -34,7 +33,7 @@ function OnModalHidden(modal)
 	end
 end
 
-Events.Connect("ConfirmBuy", OnConfirmBuyInvoked)
+Events.Connect("ShowConfirmBuy", OnShowConfirmBuy)
 Events.Connect("CancelBuy", Hide)
 Events.Connect("ModalHidden", OnModalHidden)
 
@@ -62,11 +61,9 @@ function UpdateContents(itemDef)
 	USES_TEXT.text = "Uses: " .. itemDefinition.numberOfUses
 	-- RP
 	if itemDefinition.rpGained > 0 then
-		RP_ICON.visibility = Visibility.INHERIT
 		RP_TEXT.visibility = Visibility.INHERIT
 		RP_TEXT.text = "+" .. itemDefinition.rpGained
 	else
-		RP_ICON.visibility = Visibility.FORCE_OFF
 		RP_TEXT.visibility = Visibility.FORCE_OFF
 	end
 	-- Cost

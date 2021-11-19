@@ -30,11 +30,6 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:RPIcon"
-        ObjectReference {
-        }
-      }
-      Overrides {
         Name: "cs:RPText"
         ObjectReference {
         }
@@ -91,14 +86,6 @@ Assets {
       }
       Overrides {
         Name: "cs:UsesText:ml"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:RPIcon:isrep"
-        Bool: false
-      }
-      Overrides {
-        Name: "cs:RPIcon:ml"
         Bool: false
       }
       Overrides {

@@ -30,4 +30,15 @@ function API.GetDefinition(id)
 end
 
 
+function API.GetDefinitionsForCategory(category)
+	local results = {}
+	for k,v in pairs(definitions) do
+		if v.category == category then
+			table.insert(results, v)
+		end
+	end
+	return results
+end
+
+
 

@@ -8,13 +8,12 @@ local isInteractableLogic = TRIGGER.isInteractable
 Task.Wait()
 
 local shopDefinition = _G.Shops.GetDefinition(SHOP_ID)
-local itemDefinition = _G.Consumables.GetDefinition(shopDefinition.itemId)
 
 TRIGGER.interactionLabel = shopDefinition.displayName
 
 
 function OnInteracted(trigger, player)
-	Events.Broadcast("ShowConfirmBuy", itemDefinition)
+	Events.Broadcast("ShowCategoryShop", shopDefinition)
 	
 	TRIGGER.isInteractable = false
 end
@@ -22,13 +21,14 @@ end
 function OnBeginOverlap(trigger, player)
 	if not player:IsA("Player") then return end
 	
-	Events.Broadcast("ShowConfirmBuy", itemDefinition)
+	Events.Broadcast("ShowCategoryShop", shopDefinition)
 end
 
 function OnEndOverlap(trigger, player)
 	if not player:IsA("Player") then return end
 	
 	Events.Broadcast("CancelBuy")
+	Events.Broadcast("HideCategoryShop")
 	
 	RestoreInteractable()
 end
@@ -39,7 +39,7 @@ function RestoreInteractable()
 		TRIGGER.isInteractable = true
 	end
 end
-Events.Connect("ConfirmBuyHidden", RestoreInteractable)
+Events.Connect("CategoryShopHidden", RestoreInteractable)
 
 
 if isInteractableLogic then
