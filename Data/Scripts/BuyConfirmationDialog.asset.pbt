@@ -104,6 +104,46 @@ Assets {
         Name: "cs:CostText:ml"
         Bool: false
       }
+      Overrides {
+        Name: "cs:ModalPopup:tooltip"
+        String: "A reference to the Modal Popup component that accompanies this UI."
+      }
+      Overrides {
+        Name: "cs:YesButton:tooltip"
+        String: "The positive/confirmation button that will complete the transaction."
+      }
+      Overrides {
+        Name: "cs:DisplayName:tooltip"
+        String: "UI Text for the name of the item being purchased."
+      }
+      Overrides {
+        Name: "cs:Description:tooltip"
+        String: "UI Text for the description of the item being purchased."
+      }
+      Overrides {
+        Name: "cs:UsesText:tooltip"
+        String: "UI Text for the number of uses of the item being purchased."
+      }
+      Overrides {
+        Name: "cs:RPText:tooltip"
+        String: "UI Text for the RP amount gained by the item being purchased."
+      }
+      Overrides {
+        Name: "cs:CostText:tooltip"
+        String: "UI Text for the cost to buy the item."
+      }
+      Overrides {
+        Name: "cs:NoMoneyColor:tooltip"
+        String: "Color to use for CostText if the player doesn\'t have enough coins."
+      }
+      Overrides {
+        Name: "cs:BuySFX:tooltip"
+        String: "Sound to play when the purchase succeeds."
+      }
+      Overrides {
+        Name: "cs:ErrorSFX:tooltip"
+        String: "Sound to play when the purchase fails."
+      }
     }
   }
   SerializationVersion: 101

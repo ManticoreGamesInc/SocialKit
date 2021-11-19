@@ -59,6 +59,38 @@ Assets {
         Name: "cs:OutsideButton:ml"
         Bool: false
       }
+      Overrides {
+        Name: "cs:MoveSpeed:tooltip"
+        String: "How fast the popup will move in and out of the screen."
+      }
+      Overrides {
+        Name: "cs:OffScreenY:tooltip"
+        String: "The position off-screen (vertically)."
+      }
+      Overrides {
+        Name: "cs:FadeColor:tooltip"
+        String: "Color of the background layer, behind the popup when the modal appears."
+      }
+      Overrides {
+        Name: "cs:CloseSFX:tooltip"
+        String: "Sound to play when the close button, or outside are pressed."
+      }
+      Overrides {
+        Name: "cs:OpenSFX:tooltip"
+        String: "Sound to play when the modal appears."
+      }
+      Overrides {
+        Name: "cs:CloseButton:tooltip"
+        String: "Reference to the close button [x]."
+      }
+      Overrides {
+        Name: "cs:OutsideButton:tooltip"
+        String: "A large button that fills the whole screen behind the popup. This detects clicks outside of the dialog."
+      }
+      Overrides {
+        Name: "cs:MainPanel:tooltip"
+        String: "Reference to the main UI Panel that will be animated in/out."
+      }
     }
   }
   SerializationVersion: 101

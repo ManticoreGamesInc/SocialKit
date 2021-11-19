@@ -102,6 +102,42 @@ Assets {
         Name: "cs:SecondaryPeriod:ml"
         Bool: false
       }
+      Overrides {
+        Name: "cs:ServerScript:tooltip"
+        String: "Reference to the server script."
+      }
+      Overrides {
+        Name: "cs:ModelRoot:tooltip"
+        String: "Reference to the root where the 3D model will be placed."
+      }
+      Overrides {
+        Name: "cs:IKRoot:tooltip"
+        String: "Parent of the IK Anchor. This is what\'s attached to the player."
+      }
+      Overrides {
+        Name: "cs:IKBone:tooltip"
+        String: "Name of the bone on the player, onto which the IK Root is attached."
+      }
+      Overrides {
+        Name: "cs:IKAnchor:tooltip"
+        String: "Reference to the IK Anchor object that will be activated when the player presses the primary action binding."
+      }
+      Overrides {
+        Name: "cs:PrimarySFX:tooltip"
+        String: "Sound to play when the item is activated."
+      }
+      Overrides {
+        Name: "cs:PrimaryChance:tooltip"
+        String: "% chance to play the primary sound, from 0 to 1."
+      }
+      Overrides {
+        Name: "cs:SecondarySFX:tooltip"
+        String: "Secondary sound to play periodically while the primary action binding is being held down."
+      }
+      Overrides {
+        Name: "cs:SecondaryPeriod:tooltip"
+        String: "The interval/period in which to play the secondary sound."
+      }
     }
   }
   SerializationVersion: 101

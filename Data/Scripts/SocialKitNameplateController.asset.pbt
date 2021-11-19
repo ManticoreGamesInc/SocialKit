@@ -28,7 +28,7 @@ Assets {
       }
       Overrides {
         Name: "cs:ShowOnSelf:tooltip"
-        String: "Show a nameplate on the local player"
+        String: "If true, players will see their own nameplate in addition to that of other players."
       }
       Overrides {
         Name: "cs:ShowOnSelf:isrep"
@@ -40,7 +40,7 @@ Assets {
       }
       Overrides {
         Name: "cs:MaxDistance:tooltip"
-        String: "Only show nameplates on teammates up to this distance away. 0 means always show them."
+        String: "Only show nameplates up to this distance away. 0 means always show them."
       }
       Overrides {
         Name: "cs:MaxDistance:isrep"
@@ -52,7 +52,7 @@ Assets {
       }
       Overrides {
         Name: "cs:ShowOnDeadPlayers:tooltip"
-        String: "Show nameplates even on dead players"
+        String: "If true, the nameplate will be visible even while a player is dead."
       }
       Overrides {
         Name: "cs:ShowOnDeadPlayers:isrep"
@@ -81,6 +81,10 @@ Assets {
       Overrides {
         Name: "cs:NameplateTemplate:ml"
         Bool: false
+      }
+      Overrides {
+        Name: "cs:NameplateTemplate:tooltip"
+        String: "Template for nameplates that will be spawned for each player."
       }
     }
   }
