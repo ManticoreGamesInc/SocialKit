@@ -1,6 +1,8 @@
 --[[
 
 SOCIAL KIT
+v1.0 - 2021/11/19
+by: standardcombo, Slinkous
 
 
 	The Social Kit allows you to build a roleplay-driven social space where commerce thrives, 
