@@ -1,3 +1,8 @@
+--[[
+	Food Equipment - Client
+	by: standardcombo
+	v1.0
+--]]
 
 local EQUIPMENT = script:FindAncestorByType("Equipment")
 local MODEL_ROOT = script:GetCustomProperty("ModelRoot"):WaitForObject()

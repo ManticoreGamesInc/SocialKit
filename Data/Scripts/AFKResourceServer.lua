@@ -1,3 +1,8 @@
+--[[
+	AFK Resource - Server
+	by: standardcombo
+	v1.0
+--]]
 
 local RESOURCE_NAME = script:GetCustomProperty("ResourceName")
 local START_VALUE = script:GetCustomProperty("StartValue")

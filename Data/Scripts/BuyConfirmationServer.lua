@@ -1,4 +1,8 @@
-
+--[[
+	Buy Confirmation - Server
+	by: standardcombo
+	v1.0
+--]]
 
 function OnCompleteBuy(player, itemId)
 	local itemDefinition = _G.Consumables.GetDefinition(itemId)

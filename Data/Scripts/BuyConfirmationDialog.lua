@@ -1,3 +1,8 @@
+--[[
+	Buy Confirmation - Dialog
+	by: standardcombo
+	v1.0
+--]]
 
 local MODAL = script:GetCustomProperty("ModalPopup"):WaitForObject()
 MODAL = MODAL.context

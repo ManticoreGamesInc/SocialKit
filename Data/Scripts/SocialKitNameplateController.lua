@@ -1,3 +1,10 @@
+--[[
+	Social Kit Nameplate Controller
+	by: standardcombo
+	v1.0
+	
+	Custom nameplates for the Social Kit.
+--]]
 
 local NAMEPLATE_TEMPLATE = script:GetCustomProperty("NameplateTemplate")
 

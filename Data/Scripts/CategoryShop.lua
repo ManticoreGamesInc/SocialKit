@@ -1,3 +1,8 @@
+--[[
+	Category Shop
+	by: standardcombo
+	v1.0
+--]]
 
 local SHOP_ID = script:GetCustomProperty("ShopID")
 local TRIGGER = script:GetCustomProperty("Trigger"):WaitForObject()

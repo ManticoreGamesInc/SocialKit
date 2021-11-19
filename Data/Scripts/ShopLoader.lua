@@ -1,3 +1,10 @@
+--[[
+	Shop definition Loader
+	by: standardcombo
+	v1.0
+	
+	Data-folder architecture
+--]]
 
 local API = {}
 _G.Shops = API

@@ -1,3 +1,8 @@
+--[[
+	IK Stack
+	by: standardcombo
+	v1.0
+--]]
 
 local API = {}
 _G.IkStack = API

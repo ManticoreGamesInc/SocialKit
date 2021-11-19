@@ -1,3 +1,8 @@
+--[[
+	AFK Resource - Client
+	by: standardcombo
+	v1.0
+--]]
 
 local AFK_RES_SERVER = script:GetCustomProperty("AFKResourceServer"):WaitForObject()
 local PROGRESS_BAR = script:GetCustomProperty("CustomProgressBar"):WaitForObject()

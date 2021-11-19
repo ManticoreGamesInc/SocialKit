@@ -1,3 +1,8 @@
+--[[
+	Food Equipment - Server
+	by: standardcombo
+	v1.0
+--]]
 
 local EQUIPMENT = script.parent
 

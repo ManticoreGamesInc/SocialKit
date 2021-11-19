@@ -1,3 +1,8 @@
+--[[
+	Player Join Messages in Chat
+	by: standardcombo
+	v1.0
+--]]
 
 local messages = {
 	"{0} dropped in. Welcome!",

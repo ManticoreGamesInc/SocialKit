@@ -1,3 +1,8 @@
+--[[
+	Custom Progress Bar
+	by: standardcombo
+	v1.0
+--]]
 
 local FILL = script:GetCustomProperty("Fill"):WaitForObject()
 local MIN_WIDTH = script:GetCustomProperty("MinWidth") or 12

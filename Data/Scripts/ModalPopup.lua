@@ -1,3 +1,8 @@
+--[[
+	Modal Popup
+	by: standardcombo
+	v1.0
+--]]
 
 local MAIN_PANEL = script:GetCustomProperty("MainPanel"):WaitForObject()
 local OUTSIDE_BUTTON = script:GetCustomProperty("OutsideButton"):WaitForObject()
