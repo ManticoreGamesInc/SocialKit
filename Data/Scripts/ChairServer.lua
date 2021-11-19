@@ -1,6 +1,6 @@
 --[[
 	Chair - Server
-	v1.0
+	v1.1
 	by: standardcombo
 --]]
 
@@ -18,19 +18,17 @@ local getUpFBlocked = false
 
 
 function GetUp()
-	print("GetUp() 1")
-	
 	local player = sittingPlayer
 	sittingPlayer = nil
 	
 	if not Object.IsValid(player) then return end
 	
-	print("GetUp() 2")
+	player.serverUserData.chairScript = nil
 	
 	player:Detach()
 	_G.StanceStack.Remove(player, STANCE, script.id)
 	
-	player:SetWorldPosition(script:GetWorldPosition() + Vector3.UP * 10)
+	player:SetWorldPosition(script:GetWorldPosition() + Vector3.UP * 20)
 	
 	CleanupListeners()
 	

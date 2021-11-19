@@ -1,6 +1,8 @@
-
--- TODO:
---local CHAIR_MANAGER = require( script:GetCustomProperty("ChairManager") )
+--[[
+	Chair - Client
+	v1.1
+	by: standardcombo
+--]]
 
 local ROOT = script:GetCustomProperty("Root"):WaitForObject()
 local OUTER_TRIGGER = script:GetCustomProperty("OuterTrigger"):WaitForObject()
@@ -13,8 +15,10 @@ SIT_TRIGGER.collision = Collision.FORCE_OFF
 local chairForward = script:GetWorldRotation() * Vector3.FORWARD
 local chairPos = script:GetWorldPosition()
 
+local updateTask = nil
 
-function Tick()
+
+function Update()
 	if player then
 		if player.animationStance == "unarmed_sit_chair_upright" then
 			SIT_TRIGGER.collision = Collision.FORCE_OFF
@@ -41,7 +45,9 @@ end
 function OnBeginOverlap(trigger, p)
 	if p == Game.GetLocalPlayer() then
 		player = p
-		--CHAIR_MANAGER.AddUpdate(OnUpdate)
+		-- Start updating
+		updateTask = Task.Spawn(Update)
+		updateTask.repeatCount = -1
 	end
 end
 
@@ -49,7 +55,11 @@ function OnEndOverlap(trigger, p)
 	if p == Game.GetLocalPlayer() then
 		player = nil
 		SIT_TRIGGER.collision = Collision.FORCE_OFF
-		--CHAIR_MANAGER.RemoveUpdate(OnUpdate)
+		-- Stop updating
+		if updateTask then
+			updateTask:Cancel()
+			updateTask = nil
+		end
 	end
 end
 
