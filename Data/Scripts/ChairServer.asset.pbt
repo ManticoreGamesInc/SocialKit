@@ -10,6 +10,10 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:SittingStance"
+        String: "unarmed_sit_chair_upright"
+      }
+      Overrides {
         Name: "cs:GetUpPrimaryBinding"
         String: "ability_extra_33"
       }
