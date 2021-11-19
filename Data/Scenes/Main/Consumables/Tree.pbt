@@ -29,12 +29,28 @@ Objects {
       Int: 1
     }
     Overrides {
-      Name: "cs:AnimationType"
-      String: "Bite"
-    }
-    Overrides {
       Name: "cs:cost"
       Int: 3
+    }
+    Overrides {
+      Name: "cs:description"
+      String: "Tasty!"
+    }
+    Overrides {
+      Name: "cs:equipment"
+      AssetReference {
+        Id: 1555474896595674657
+      }
+    }
+    Overrides {
+      Name: "cs:model"
+      AssetReference {
+        Id: 18347202143546657143
+      }
+    }
+    Overrides {
+      Name: "cs:rpGained"
+      Int: 10
     }
   }
   Collidable_v2 {
@@ -81,7 +97,7 @@ Objects {
     }
     Overrides {
       Name: "cs:numberOfUses"
-      Int: 3
+      Int: 5
     }
     Overrides {
       Name: "cs:cost"
@@ -90,8 +106,26 @@ Objects {
     Overrides {
       Name: "cs:model"
       AssetReference {
-        Id: 1675220947145476043
+        Id: 15538122982442672033
       }
+    }
+    Overrides {
+      Name: "cs:equipment"
+      AssetReference {
+        Id: 17123863079209456085
+      }
+    }
+    Overrides {
+      Name: "cs:description"
+      String: "The energy you need, with the cozy warmth you desire."
+    }
+    Overrides {
+      Name: "cs:category"
+      String: "Drinks"
+    }
+    Overrides {
+      Name: "cs:rpGained"
+      Int: 9
     }
   }
   Collidable_v2 {
@@ -138,7 +172,7 @@ Objects {
     }
     Overrides {
       Name: "cs:numberOfUses"
-      Int: 2
+      Int: 3
     }
     Overrides {
       Name: "cs:description"
@@ -146,7 +180,7 @@ Objects {
     }
     Overrides {
       Name: "cs:cost"
-      Int: 0
+      Int: 1
     }
     Overrides {
       Name: "cs:model"
@@ -159,6 +193,10 @@ Objects {
       AssetReference {
         Id: 1555474896595674657
       }
+    }
+    Overrides {
+      Name: "cs:rpGained"
+      Int: 5
     }
   }
   Collidable_v2 {

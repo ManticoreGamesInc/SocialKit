@@ -62,6 +62,15 @@ Assets {
   }
 }
 Assets {
+  Id: 8438362470094797992
+  Name: "Prism - 4-Sided Trapezoid Right"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prism_trapezoid_001"
+  }
+}
+Assets {
   Id: 7757866143058981948
   Name: "Cube - Arched"
   PlatformAssetType: 1

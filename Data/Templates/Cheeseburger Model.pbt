@@ -1,13 +1,13 @@
 Assets {
   Id: 18347202143546657143
-  Name: "Cheeseburger - Aggripina"
+  Name: "Cheeseburger Model"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 7282563144356477132
       Objects {
         Id: 7282563144356477132
-        Name: "Cheeseburger - Aggripina"
+        Name: "Cheeseburger Model"
         Transform {
           Scale {
             X: 1
@@ -52,11 +52,14 @@ Assets {
         Name: "Bun"
         Transform {
           Location {
-            X: 0.63684082
-            Y: 0.824859619
+            X: -4.41813
+            Y: -2.04577684
+            Z: 2.06302452
           }
           Rotation {
-            Yaw: 177.270981
+            Pitch: 84.7105255
+            Yaw: 57.5984154
+            Roll: -125.608795
           }
           Scale {
             X: 0.196380928
@@ -117,12 +120,14 @@ Assets {
         Name: "burger"
         Transform {
           Location {
-            X: 0.627563477
-            Y: 0.630126953
-            Z: 1.85224915
+            X: -2.56000185
+            Y: -2.14004469
+            Z: 1.97826385
           }
           Rotation {
-            Yaw: 177.270981
+            Pitch: 84.7105255
+            Yaw: 57.5984154
+            Roll: -125.608795
           }
           Scale {
             X: 0.208595186
@@ -190,12 +195,14 @@ Assets {
         Name: "cheese"
         Transform {
           Location {
-            X: 0.64831543
-            Y: 1.06494141
-            Z: 2.9659729
+            X: -1.47466147
+            Y: -1.64641738
+            Z: 1.88572693
           }
           Rotation {
-            Yaw: -178.323242
+            Pitch: 86.9203
+            Yaw: 1.22162592
+            Roll: 178.132431
           }
           Scale {
             X: 0.157757431
@@ -264,12 +271,14 @@ Assets {
         Name: "cheese"
         Transform {
           Location {
-            X: 0.64831543
-            Y: 1.06494141
-            Z: 3.34733582
+            X: -1.09439969
+            Y: -1.6260097
+            Z: 1.86536598
           }
           Rotation {
-            Yaw: 151.228821
+            Pitch: 59.5114212
+            Yaw: 87.8572464
+            Roll: -96.0723877
           }
           Scale {
             X: 0.157757431
@@ -338,12 +347,14 @@ Assets {
         Name: "lettuce"
         Transform {
           Location {
-            X: 0.630004883
-            Y: 0.682312
-            Z: 3.49842834
+            X: -0.921647787
+            Y: -1.999125
+            Z: 1.88602257
           }
           Rotation {
-            Yaw: 177.270981
+            Pitch: 84.7105255
+            Yaw: 57.5984154
+            Roll: -125.608795
           }
           Scale {
             X: 0.0285928044
@@ -412,13 +423,14 @@ Assets {
         Name: "lettuce"
         Transform {
           Location {
-            X: 0.629394531
-            Y: 0.680542
-            Z: 3.50311279
+            X: -0.912384033
+            Y: -2.00230408
+            Z: 1.88612175
           }
           Rotation {
-            Yaw: -117.337631
-            Roll: -179.57164
+            Pitch: 28.8657093
+            Yaw: -85.2060852
+            Roll: -86.0576782
           }
           Scale {
             X: 0.0285929497
@@ -487,14 +499,14 @@ Assets {
         Name: "tomato"
         Transform {
           Location {
-            X: -4.63818359
-            Y: 2.2729187
-            Z: 4.87132263
+            X: 0.633627295
+            Y: -0.177629113
+            Z: 7.02723503
           }
           Rotation {
-            Pitch: 1.06301641
-            Yaw: -160.971
-            Roll: -90.5539703
+            Pitch: 72.0673828
+            Yaw: -73.815979
+            Roll: 12.8433428
           }
           Scale {
             X: 0.0604824759
@@ -580,14 +592,14 @@ Assets {
         Name: "tomato"
         Transform {
           Location {
-            X: -4.78271484
-            Y: 2.27029419
-            Z: 4.27145386
+            X: 0.0430941582
+            Y: -0.208153173
+            Z: 7.203825
           }
           Rotation {
-            Pitch: 1.18147242
-            Yaw: -142.807877
-            Roll: 0.0980474427
+            Pitch: 54.1420898
+            Yaw: -80.6103821
+            Roll: 97
           }
           Scale {
             X: 0.100199141
@@ -655,14 +667,14 @@ Assets {
         Name: "meat"
         Transform {
           Location {
-            X: 5.28112793
-            Y: -4.05862427
-            Z: 5.69744873
+            X: 1.29161167
+            Y: -6.75337601
+            Z: -2.74455643
           }
           Rotation {
-            Pitch: -0.615905464
-            Yaw: -144.417831
-            Roll: 7.08847618
+            Pitch: 55.924408
+            Yaw: -83.4497375
+            Roll: 101.671425
           }
           Scale {
             X: 0.0870994553
@@ -730,14 +742,14 @@ Assets {
         Name: "meat"
         Transform {
           Location {
-            X: 5.43017578
-            Y: -4.12075806
-            Z: 6.20890808
+            X: 1.79733801
+            Y: -6.79240799
+            Z: -2.91916084
           }
           Rotation {
-            Pitch: 1.52886951
-            Yaw: -162.452286
-            Roll: -83.3498154
+            Pitch: 73.3811188
+            Yaw: -71.0294495
+            Roll: 22.7422142
           }
           Scale {
             X: 0.0525752231
@@ -823,14 +835,14 @@ Assets {
         Name: "meat"
         Transform {
           Location {
-            X: -2.05737305
-            Y: -2.13253784
-            Z: 5.38691711
+            X: 1.25734949
+            Y: -4.62505865
+            Z: 4.54434395
           }
           Rotation {
-            Pitch: 11.0982914
-            Yaw: 66.8732071
-            Roll: 1.95953488
+            Pitch: -24.8233643
+            Yaw: 82.286171
+            Roll: -86.294342
           }
           Scale {
             X: 0.121012621
@@ -891,14 +903,14 @@ Assets {
         Name: "meat"
         Transform {
           Location {
-            X: -2.05737305
-            Y: -2.13253784
-            Z: 5.38691711
+            X: 1.25734949
+            Y: -4.62505865
+            Z: 4.54434395
           }
           Rotation {
-            Pitch: 11.0982914
-            Yaw: 66.8732071
-            Roll: 1.95953488
+            Pitch: -24.8233643
+            Yaw: 82.286171
+            Roll: -86.294342
           }
           Scale {
             X: 0.113668688
@@ -968,14 +980,14 @@ Assets {
         Name: "meat"
         Transform {
           Location {
-            X: -0.678222656
-            Y: 1.14337158
-            Z: 6.63299561
+            X: 2.24648428
+            Y: -1.33016276
+            Z: 3.0110054
           }
           Rotation {
-            Pitch: 2.00604
-            Yaw: 66.5632629
-            Roll: 1.92405498
+            Pitch: -25.0755
+            Yaw: 92.3193436
+            Roll: -90.5348511
           }
           Scale {
             X: 0.106006257
@@ -1036,14 +1048,14 @@ Assets {
         Name: "meat"
         Transform {
           Location {
-            X: -0.678222656
-            Y: 1.14337158
-            Z: 6.63299561
+            X: 2.24648428
+            Y: -1.33016276
+            Z: 3.0110054
           }
           Rotation {
-            Pitch: 2.00604
-            Yaw: 66.5632629
-            Roll: 1.92405498
+            Pitch: -25.0755
+            Yaw: 92.3193436
+            Roll: -90.5348511
           }
           Scale {
             X: 0.0973358527
@@ -1113,13 +1125,14 @@ Assets {
         Name: "Bun"
         Transform {
           Location {
-            X: 0.360473633
-            Y: 0.666748047
-            Z: 5.5440979
+            X: 1.13301134
+            Y: -1.89617026
+            Z: 2.04569817
           }
           Rotation {
-            Yaw: 177.271027
-            Roll: -4.59567833
+            Pitch: 84.710083
+            Yaw: 57.6003761
+            Roll: -130.202637
           }
           Scale {
             X: 0.196380928

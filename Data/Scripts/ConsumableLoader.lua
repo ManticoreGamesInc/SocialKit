@@ -23,6 +23,9 @@ end
 
 
 function API.GetDefinition(id)
+	if not definitions[id] then
+		warn("Did not find definition for consumable: "..id)
+	end
 	return definitions[id]
 end
 

@@ -1,7 +1,7 @@
 
 local SHOP_ID = script:GetCustomProperty("ShopID")
 local TRIGGER = script:GetCustomProperty("Trigger"):WaitForObject()
-local EXIT_TRIGGER = script:GetCustomProperty("OuterTrigger"):WaitForObject()
+local EXIT_TRIGGER = script:GetCustomProperty("ExitTrigger"):WaitForObject()
 
 local isInteractableLogic = TRIGGER.isInteractable
 

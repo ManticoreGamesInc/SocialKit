@@ -237,9 +237,9 @@ Assets {
         Name: "IK Anchor"
         Transform {
           Location {
-            X: 20.6945744
-            Y: 10.6390791
-            Z: -10.0287209
+            X: 17.3905201
+            Y: 23.7475357
+            Z: -12.0315628
           }
           Rotation {
             Pitch: 47.6064491

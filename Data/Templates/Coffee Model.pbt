@@ -1,330 +1,31 @@
 Assets {
-  Id: 1675220947145476043
-  Name: "CoffeeEquipment"
+  Id: 15538122982442672033
+  Name: "Coffee Model"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 12792248877237016915
+      RootId: 16993967356680732451
       Objects {
-        Id: 12792248877237016915
-        Name: "CoffeeEquipment"
+        Id: 16993967356680732451
+        Name: "Coffee Model"
         Transform {
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.99999994
+            Y: 0.99999994
+            Z: 0.99999994
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 3807918045201516918
-        ChildIds: 13430801892565878085
-        ChildIds: 9995370169798204568
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:IsDrinking"
-            Bool: false
-          }
-          Overrides {
-            Name: "cs:IsDrinking:isrep"
-            Bool: true
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Equipment {
-          SocketName: "right_prop"
-          PickupTrigger {
-            SubObjectId: 13430801892565878085
-          }
-        }
-      }
-      Objects {
-        Id: 3807918045201516918
-        Name: "CoffeeServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12792248877237016915
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 5891176378766425696
-          }
-        }
-      }
-      Objects {
-        Id: 13430801892565878085
-        Name: "Trigger"
-        Transform {
-          Location {
-            X: 11.203083
-            Y: 0.662597656
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.658713698
-            Y: 0.658713698
-            Z: 0.658713698
-          }
-        }
-        ParentId: 12792248877237016915
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Trigger {
-          Interactable: true
-          InteractionLabel: "Take Coffee"
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
-          }
-        }
-      }
-      Objects {
-        Id: 9995370169798204568
-        Name: "ClientContext"
-        Transform {
-          Location {
-            X: 13.3318348
-            Z: -11.8722687
-          }
-          Rotation {
-            Yaw: 14.9510546
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12792248877237016915
-        ChildIds: 12663900107958840964
-        ChildIds: 2811473446810269154
-        ChildIds: 13116904624908501567
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        NetworkContext {
-        }
-      }
-      Objects {
-        Id: 12663900107958840964
-        Name: "CoffeeClient"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 9995370169798204568
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:IKRoot"
-            ObjectReference {
-              SubObjectId: 2811473446810269154
-            }
-          }
-          Overrides {
-            Name: "cs:IKAnchor"
-            ObjectReference {
-              SubObjectId: 16114976672666944774
-            }
-          }
-          Overrides {
-            Name: "cs:SlurpSound"
-            ObjectReference {
-              SubObjectId: 16488179709201941395
-            }
-          }
-          Overrides {
-            Name: "cs:GulpSound"
-            ObjectReference {
-              SubObjectId: 7454797947902561188
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 6072154542250147306
-          }
-        }
-      }
-      Objects {
-        Id: 2811473446810269154
-        Name: "IK Root"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 9995370169798204568
-        ChildIds: 16114976672666944774
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsGroup: true
-        }
-      }
-      Objects {
-        Id: 16114976672666944774
-        Name: "IK Anchor"
-        Transform {
-          Location {
-            X: 17.3905201
-            Y: 23.7475357
-            Z: -12.0315638
-          }
-          Rotation {
-            Pitch: 47.6064491
-            Yaw: -70.3889465
-            Roll: -64.1994629
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 2811473446810269154
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        IKAnchor {
-          AimOffset {
-            X: -20
-          }
-          IKAnchorType {
-            Value: "mc:eikanchortype:righthand"
-          }
-          BlendWeight: 1
-          BlendInTime: 0.35
-          BlendOutTime: 0.3
-        }
-      }
-      Objects {
-        Id: 13116904624908501567
-        Name: "Mug"
-        Transform {
-          Location {
-            X: 1.22857153
-            Y: -0.310184956
-            Z: 4.86639404
-          }
-          Rotation {
-            Yaw: 2.29775786
-          }
-          Scale {
-            X: 0.733694196
-            Y: 0.733694196
-            Z: 0.733694196
-          }
-        }
-        ParentId: 9995370169798204568
-        ChildIds: 16488179709201941395
-        ChildIds: 7454797947902561188
-        ChildIds: 11022730269004296577
-        ChildIds: 16726223082941001264
-        ChildIds: 2422542056155193740
-        ChildIds: 12883390578701416651
-        ChildIds: 4337401523002585598
-        ChildIds: 15506729897157544479
-        ChildIds: 8054419402283007406
-        ChildIds: 17715691808317359567
-        ChildIds: 1597436461934421548
-        ChildIds: 16605396278658143070
+        ChildIds: 14206238612980370589
+        ChildIds: 13096840731072615212
+        ChildIds: 8953350867206233232
+        ChildIds: 17227631417505924567
+        ChildIds: 7057039130594561250
+        ChildIds: 10010605498687108867
+        ChildIds: 3609955895712661682
+        ChildIds: 12107065383280556243
+        ChildIds: 5473302881552292656
+        ChildIds: 13523218865665044034
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -339,105 +40,26 @@ Assets {
         }
       }
       Objects {
-        Id: 16488179709201941395
-        Name: "Drink Liquid Slurp 01 SFX"
-        Transform {
-          Location {
-            X: 0.0927106962
-            Y: -0.38135469
-            Z: 32.3015327
-          }
-          Rotation {
-            Yaw: -17.2488403
-          }
-          Scale {
-            X: 1.36296523
-            Y: 1.36296523
-            Z: 1.36296523
-          }
-        }
-        ParentId: 13116904624908501567
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 3001107550534081909
-          }
-          Volume: 0.25
-          Falloff: 2000
-          Radius: 100
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
-        }
-      }
-      Objects {
-        Id: 7454797947902561188
-        Name: "Drink Liquid Gulp Swallow 01 SFX"
-        Transform {
-          Location {
-            X: 0.0927107111
-            Y: -0.38135463
-            Z: 32.3015327
-          }
-          Rotation {
-            Yaw: -17.2488537
-          }
-          Scale {
-            X: 1.36296558
-            Y: 1.36296558
-            Z: 1.36296558
-          }
-        }
-        ParentId: 13116904624908501567
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 12404334582836212876
-          }
-          Volume: 0.35
-          Falloff: 2000
-          Radius: 100
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
-        }
-      }
-      Objects {
-        Id: 11022730269004296577
+        Id: 14206238612980370589
         Name: "Quarter hemisphere"
         Transform {
           Location {
+            X: 18.0422306
+            Y: -6.99488878
+            Z: -10.5217886
           }
           Rotation {
-            Roll: -179.999985
+            Pitch: 5.26018095
+            Yaw: -11.5697937
+            Roll: 178.781509
           }
           Scale {
-            X: 0.225586519
-            Y: 0.225586444
+            X: 0.225586489
+            Y: 0.225586429
             Z: 0.0595514402
           }
         }
-        ParentId: 13116904624908501567
+        ParentId: 16993967356680732451
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -472,23 +94,26 @@ Assets {
         }
       }
       Objects {
-        Id: 16726223082941001264
+        Id: 13096840731072615212
         Name: "Quarter hemisphere"
         Transform {
           Location {
+            X: 18.0422306
+            Y: -6.99488878
+            Z: -10.5217886
           }
           Rotation {
-            Pitch: 1.36603776e-05
-            Yaw: -89.9999695
-            Roll: 180
+            Pitch: -1.21292114
+            Yaw: -101.456482
+            Roll: 174.73761
           }
           Scale {
-            X: 0.225586519
-            Y: 0.225586444
+            X: 0.225586489
+            Y: 0.225586429
             Z: 0.0595514402
           }
         }
-        ParentId: 13116904624908501567
+        ParentId: 16993967356680732451
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -523,22 +148,26 @@ Assets {
         }
       }
       Objects {
-        Id: 2422542056155193740
+        Id: 8953350867206233232
         Name: "Quarter hemisphere"
         Transform {
           Location {
+            X: 18.0422306
+            Y: -6.99488878
+            Z: -10.5217886
           }
           Rotation {
-            Yaw: 89.9999313
-            Roll: 180
+            Pitch: 1.21287763
+            Yaw: 78.5405426
+            Roll: -174.737747
           }
           Scale {
-            X: 0.225586519
-            Y: 0.225586444
+            X: 0.225586489
+            Y: 0.225586429
             Z: 0.0595514402
           }
         }
-        ParentId: 13116904624908501567
+        ParentId: 16993967356680732451
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -573,22 +202,26 @@ Assets {
         }
       }
       Objects {
-        Id: 12883390578701416651
+        Id: 17227631417505924567
         Name: "Quarter hemisphere"
         Transform {
           Location {
+            X: 18.0422306
+            Y: -6.99488878
+            Z: -10.5217886
           }
           Rotation {
-            Yaw: -179.999969
-            Roll: 179.999985
+            Pitch: -5.26019287
+            Yaw: 168.429337
+            Roll: -178.781631
           }
           Scale {
-            X: 0.225586519
-            Y: 0.225586444
+            X: 0.225586489
+            Y: 0.225586429
             Z: 0.0595514402
           }
         }
-        ParentId: 13116904624908501567
+        ParentId: 16993967356680732451
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -623,24 +256,26 @@ Assets {
         }
       }
       Objects {
-        Id: 4337401523002585598
+        Id: 7057039130594561250
         Name: "Pipe - Half Thin"
         Transform {
           Location {
-            X: -0.0915893912
-            Y: -0.140771091
-            Z: 0.00485347398
+            X: 17.9245
+            Y: -7.11428308
+            Z: -10.5283117
           }
           Rotation {
-            Yaw: 179.999985
+            Pitch: -5.26019287
+            Yaw: 168.42923
+            Roll: 1.21832359
           }
           Scale {
-            X: 0.225586519
-            Y: 0.225586519
-            Z: 0.225586519
+            X: 0.225586489
+            Y: 0.225586489
+            Z: 0.225586489
           }
         }
-        ParentId: 13116904624908501567
+        ParentId: 16993967356680732451
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -684,24 +319,26 @@ Assets {
         }
       }
       Objects {
-        Id: 15506729897157544479
+        Id: 10010605498687108867
         Name: "Pipe - Half Thin"
         Transform {
           Location {
-            X: -0.0915893912
-            Y: -0.140771091
-            Z: 0.00485347398
+            X: 17.9245
+            Y: -7.11428308
+            Z: -10.5283117
           }
           Rotation {
-            Roll: 2.73207461e-05
+            Pitch: 5.26022911
+            Yaw: -11.5697327
+            Roll: -1.21847534
           }
           Scale {
-            X: 0.225586519
-            Y: 0.225586519
-            Z: 0.225586519
+            X: 0.225586489
+            Y: 0.225586489
+            Z: 0.225586489
           }
         }
-        ParentId: 13116904624908501567
+        ParentId: 16993967356680732451
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -745,26 +382,26 @@ Assets {
         }
       }
       Objects {
-        Id: 8054419402283007406
+        Id: 3609955895712661682
         Name: "Pipe - 90-Degree Long Thin"
         Transform {
           Location {
-            X: -11.4275646
-            Y: -0.205378592
-            Z: 17.2830601
+            X: 5.22773457
+            Y: -4.95619726
+            Z: 5.63251448
           }
           Rotation {
-            Pitch: -90
-            Yaw: -18.4349365
-            Roll: -161.565033
+            Pitch: -84.5996704
+            Yaw: 1.48253822
+            Roll: 167.001511
           }
           Scale {
-            X: 0.0306773987
-            Y: 0.0306773968
-            Z: 0.0400451757
+            X: 0.03067738
+            Y: 0.03067738
+            Z: 0.040045172
           }
         }
-        ParentId: 13116904624908501567
+        ParentId: 16993967356680732451
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -799,24 +436,26 @@ Assets {
         }
       }
       Objects {
-        Id: 17715691808317359567
+        Id: 12107065383280556243
         Name: "Pipe - 90-Degree Long Thin"
         Transform {
           Location {
-            X: -19.4103947
-            Y: -0.205382317
-            Z: 11.152792
+            X: -1.98319352
+            Y: -3.34676385
+            Z: -1.20237052
           }
           Rotation {
-            Roll: -179.999985
+            Pitch: 5.26018095
+            Yaw: -11.5697632
+            Roll: 178.781631
           }
           Scale {
-            X: 0.04
+            X: 0.0399999954
             Y: 0.030677408
             Z: 0.03067738
           }
         }
-        ParentId: 13116904624908501567
+        ParentId: 16993967356680732451
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -851,25 +490,26 @@ Assets {
         }
       }
       Objects {
-        Id: 1597436461934421548
+        Id: 5473302881552292656
         Name: "Cylinder"
         Transform {
           Location {
-            X: 0.0123330979
-            Y: -0.072689034
-            Z: 15.2075949
+            X: 16.6092854
+            Y: -7.10568476
+            Z: 4.61783266
           }
           Rotation {
-            Yaw: 179.999954
-            Roll: 2.73207461e-05
+            Pitch: -5.26019287
+            Yaw: 168.429337
+            Roll: 1.2183243
           }
           Scale {
-            X: 0.217084989
-            Y: 0.217084989
-            Z: 0.0125709558
+            X: 0.2170849
+            Y: 0.2170849
+            Z: 0.012570953
           }
         }
-        ParentId: 13116904624908501567
+        ParentId: 16993967356680732451
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -912,21 +552,26 @@ Assets {
         }
       }
       Objects {
-        Id: 16605396278658143070
+        Id: 13523218865665044034
         Name: "Steam Volume VFX"
         Transform {
           Location {
-            Z: 20.9713745
+            X: 16.0696754
+            Y: -7.04622602
+            Z: 10.3564415
           }
           Rotation {
+            Pitch: 5.26031065
+            Yaw: -11.5697632
+            Roll: -1.21847534
           }
           Scale {
-            X: 0.134911
-            Y: 0.134911
-            Z: 0.134911
+            X: 0.134910941
+            Y: 0.134910941
+            Z: 0.134910941
           }
         }
-        ParentId: 13116904624908501567
+        ParentId: 16993967356680732451
         UnregisteredParameters {
           Overrides {
             Name: "bp:Particle Scale Multiplier"
@@ -981,24 +626,6 @@ Assets {
         Relevance {
           Value: "mc:eproxyrelevance:medium"
         }
-      }
-    }
-    Assets {
-      Id: 3001107550534081909
-      Name: "Drink Liquid Slurp 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_drink_slurp_01a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 12404334582836212876
-      Name: "Drink Liquid Gulp Swallow 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_drink_gulp_swallow_01a_Cue_ref"
       }
     }
     Assets {
