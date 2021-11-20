@@ -1,7 +1,7 @@
 --[[
 	Category Shop - Dialog
 	by: standardcombo
-	v1.0
+	v1.1
 --]]
 
 local MODAL = script:GetCustomProperty("ModalPopup"):WaitForObject()
@@ -64,10 +64,21 @@ function UpdateContents(itemDefs)
 		
 		row.clientUserData.itemDefinition = def
 		
-		row:GetCustomProperty("DisplayName"):WaitForObject().text = def.displayName
-		row:GetCustomProperty("CostText"):WaitForObject().text = tostring(def.cost)
-		row:GetCustomProperty("UsesText"):WaitForObject().text = "Uses: "..def.numberOfUses
-		row:GetCustomProperty("RPText"):WaitForObject().text = "+"..def.rpGained
+		local uiDisplayName = row:GetCustomProperty("DisplayName"):WaitForObject()
+		local uiCostText = row:GetCustomProperty("CostText"):WaitForObject()
+		local uiUsesText = row:GetCustomProperty("UsesText"):WaitForObject()
+		local uiRPText = row:GetCustomProperty("RPText"):WaitForObject()
+		
+		uiDisplayName.text = def.displayName
+		uiCostText.text = tostring(def.cost)
+		uiUsesText.text = "Uses: "..def.numberOfUses
+		
+		if def.rpGained > 0 and _G.isRPEnabled then
+			uiRPText.text = "+"..def.rpGained
+			uiRPText.visibility = Visibility.INHERIT
+		else
+			uiRPText.visibility = Visibility.FORCE_OFF
+		end
 		
 		y = y + row.height
 	end

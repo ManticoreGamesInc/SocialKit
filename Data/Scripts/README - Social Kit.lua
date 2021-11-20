@@ -1,7 +1,7 @@
 --[[
 
 SOCIAL KIT
-v1.0 - 2021/11/19
+v1.1 - 2021/11/19
 by: standardcombo, Slinkous
 
 
@@ -33,6 +33,7 @@ TABLE OF CONTENTS
 		a. Customizing Currency
 	6. Granting RP
 		a. Adding RP to the Project
+	7. Release Notes
 
 
 
@@ -192,5 +193,13 @@ Adding RP to the Project
 	4. In the Consumables folder in the Definitions folder, make sure the consumable item definitions
 	   include RP values greater than 0 for the items that should grant RP.
 
+
+RELEASE NOTES
+-------------
+v1.0 2021/11/19
+	- First release
+v1.1 2021/11/19
+	- Added a script "SetRPEnabled" that flags RP as enabled for the game.
+	- Shop elements that mention RP are now hidden if RP is disabled or if the item gives zero RP.
 
 ]]

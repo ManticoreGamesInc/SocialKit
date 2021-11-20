@@ -1,7 +1,7 @@
 --[[
 	Buy Confirmation - Dialog
 	by: standardcombo
-	v1.0
+	v1.1
 --]]
 
 local MODAL = script:GetCustomProperty("ModalPopup"):WaitForObject()
@@ -17,6 +17,8 @@ local NO_MONEY_COLOR = script:GetCustomProperty("NoMoneyColor")
 local BUY_SFX = script:GetCustomProperty("BuySFX"):GetObject()
 local ERROR_SFX = script:GetCustomProperty("ErrorSFX"):GetObject()
 
+USES_TEXT.clientUserData.defaultX = USES_TEXT.x
+USES_TEXT.clientUserData.defaultAnchor = USES_TEXT.anchor
 COST_TEXT.clientUserData.defaultColor = COST_TEXT:GetColor()
 
 local player = Game.GetLocalPlayer()
@@ -66,11 +68,15 @@ function UpdateContents(itemDef)
 	-- Uses
 	USES_TEXT.text = "Uses: " .. itemDefinition.numberOfUses
 	-- RP
-	if itemDefinition.rpGained > 0 then
+	if itemDefinition.rpGained > 0 and _G.isRPEnabled then
 		RP_TEXT.visibility = Visibility.INHERIT
 		RP_TEXT.text = "+" .. itemDefinition.rpGained
+		USES_TEXT.x = USES_TEXT.clientUserData.defaultX
+		USES_TEXT.anchor = USES_TEXT.clientUserData.defaultAnchor
 	else
 		RP_TEXT.visibility = Visibility.FORCE_OFF
+		USES_TEXT.x = 0
+		USES_TEXT.anchor = UIPivot.MIDDLE_CENTER
 	end
 	-- Cost
 	COST_TEXT.text = tostring(itemDefinition.cost)

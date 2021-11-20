@@ -1289,7 +1289,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 200
+    Width: 135
     Height: 60
     UIX: -30
     RenderTransformPivot {
@@ -1308,7 +1308,7 @@ Objects {
       }
       Size: 32
       Justification {
-        Value: "mc:etextjustify:right"
+        Value: "mc:etextjustify:center"
       }
       Font {
         Id: 18305181429646832465
