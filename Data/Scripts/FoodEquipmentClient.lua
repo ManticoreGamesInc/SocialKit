@@ -9,7 +9,7 @@ local SERVER_SCRIPT = script:GetCustomProperty("ServerScript"):WaitForObject()
 local MODEL_ROOT = script:GetCustomProperty("ModelRoot"):WaitForObject()
 local IK_ROOT = script:GetCustomProperty("IKRoot"):WaitForObject()
 local IK_ANCHOR = script:GetCustomProperty("IKAnchor"):WaitForObject()
-local IK_BONE = script:GetCustomProperty("IKBone"):WaitForObject()
+local IK_BONE = script:GetCustomProperty("IKBone")
 local PRIMARY_SFX = script:GetCustomProperty("PrimarySFX"):GetObject()
 local PRIMARY_CHANCE = script:GetCustomProperty("PrimaryChance")
 local SECONDARY_SFX = script:GetCustomProperty("SecondarySFX"):GetObject()
@@ -35,7 +35,7 @@ function Tick(deltaTime)
 			secondaryCountdown = secondaryCountdown - deltaTime
 			if secondaryCountdown <= 0 then
 				secondaryCountdown = SECONDARY_PERIOD
-				
+
 				SECONDARY_SFX:Play()
 			end
 		end
@@ -46,10 +46,10 @@ end
 function Start()
 	isActive = true
 	secondaryCountdown = SECONDARY_PERIOD
-	
+
 	IK_ROOT:AttachToPlayer(EQUIPMENT.owner, IK_BONE)
 	_G.IkStack.Add(EQUIPMENT.owner, IK_ANCHOR)
-	
+
 	-- Random chance to play the primary sound
 	if PRIMARY_SFX and math.random() < PRIMARY_CHANCE then
 		PRIMARY_SFX:Play()
@@ -59,14 +59,14 @@ end
 
 function Stop()
 	isActive = false
-	
+
 	_G.IkStack.Remove(EQUIPMENT.owner, IK_ANCHOR)
 end
 
 
 function OnBindingPressed(player, action)
 	if player ~= EQUIPMENT.owner then return end
-	
+
 	if action == BINDING then
 		Start()
 	end
@@ -76,7 +76,7 @@ pressedListener = PLAYER.bindingPressedEvent:Connect(OnBindingPressed)
 
 function OnBindingReleased(player, action)
 	if player ~= EQUIPMENT.owner then return end
-	
+
 	if action == BINDING then
 		Stop()
 	end
@@ -91,18 +91,18 @@ function OnPropertyChanged(obj, propName, newValue)
 			local itemDefinition = _G.Consumables.GetDefinition(itemId)
 			model = World.SpawnAsset(itemDefinition.model, {parent = MODEL_ROOT})
 		end
-		
+
 	elseif propName == "usesRemaining" then
 		usesRemaining = EQUIPMENT:GetCustomProperty("usesRemaining")
 	end
 	if player == EQUIPMENT.owner then return end
-	
+
 	if propName == "isActive" then
 		if EQUIPMENT:GetCustomProperty("isActive") then
 			if not isActive then
 				Start()
 			end
-			
+
 		elseif isActive then
 			Stop()
 		end
@@ -123,7 +123,7 @@ script.destroyEvent:Connect(function()
 	if Object.IsValid(EQUIPMENT.owner) then
 		_G.IkStack.Remove(EQUIPMENT.owner, IK_ANCHOR)
 	end
-	
+
 	if Object.IsValid(IK_ROOT) then
 		IK_ROOT:Destroy()
 	end
