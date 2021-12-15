@@ -53,6 +53,8 @@ function OnPlayerJoined(player)
 
 	nameplates[player].nameText.visibility = Visibility.INHERIT
 	nameplates[player].subtitleText.visibility = Visibility.INHERIT
+	
+	UpdateBadges(player)
 end
 
 -- nil OnPlayerLeft(Player)
@@ -115,4 +117,47 @@ end
 -- Initialize
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 Game.playerLeftEvent:Connect(OnPlayerLeft)
+
+
+function UpdateBadges(player)
+	if not _G.ExternalBadges then return end
+	
+	local nameplate = nameplates[player]
+	local subtitle = nameplate.subtitleText
+	local size = subtitle.height
+	
+	local badgeImages = _G.ExternalBadges.GetBadges(player, size)
+	
+	if nameplate.badgeImages then
+		for _,img in ipairs(nameplate.badgeImages) do
+			img:Destroy()
+		end
+	end
+	nameplate.badgeImages = badgeImages
+	
+	if badgeImages == nil or #badgeImages == 0 then return end
+	
+	local badgeIntervalX = size * 1.1 -- 10% Spacing
+	local x = subtitle.x - badgeIntervalX * (#badgeImages - 1) / 2
+	for _,img in ipairs(badgeImages) do
+		img.parent = subtitle.parent
+		img.x = x
+		img.y = subtitle.y
+		img.anchor = subtitle.anchor
+		img.dock = subtitle.dock
+		
+		x = x + badgeIntervalX
+	end
+	
+	Task.Wait()
+	if not Object.IsValid(player) then return end
+	
+	-- Shift to the left in case the player has a subtitle
+	local subtitleSize = subtitle:ComputeApproximateSize()
+	if not subtitleSize or subtitleSize.x < subtitleSize.y / 4 then return end
+	
+	for _,img in ipairs(badgeImages) do
+		img.x = img.x - subtitleSize.x / 2 - badgeIntervalX
+	end
+end
 

@@ -51,6 +51,7 @@ Objects {
   }
   ParentId: 2522544622353355839
   ChildIds: 13143837673385793497
+  ChildIds: 2649142462017772862
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -64,6 +65,48 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 2649142462017772862
+  Name: "ExternalBadges"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12298241965619050853
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:GameId"
+      String: "ca5d56/external-badges"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1623366338472214926
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

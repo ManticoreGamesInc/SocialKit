@@ -7,7 +7,7 @@ Assets {
       RootId: 11892278358033161151
       Objects {
         Id: 11892278358033161151
-        Name: "Helper_Nameplate"
+        Name: "SocialKitNameplate"
         Transform {
           Scale {
             X: 1
@@ -154,7 +154,7 @@ Assets {
               B: 0.72
               A: 1
             }
-            Size: 81
+            Size: 60
             Justification {
               Value: "mc:etextjustify:center"
             }
@@ -224,7 +224,7 @@ Assets {
         Control {
           Width: 2200
           Height: 60
-          UIY: 110
+          UIY: 120
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -237,7 +237,7 @@ Assets {
               B: 0.297000021
               A: 1
             }
-            Size: 60
+            Size: 40
             Justification {
               Value: "mc:etextjustify:center"
             }
@@ -246,7 +246,7 @@ Assets {
               Id: 18305181429646832465
             }
             VerticalJustification {
-              Value: "mc:everticaljustification:top"
+              Value: "mc:everticaljustification:center"
             }
             ShadowColor {
               A: 1
