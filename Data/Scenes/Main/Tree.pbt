@@ -33,6 +33,9 @@ Objects {
   }
   Folder {
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 7798052427219841836
@@ -66,6 +69,9 @@ Objects {
       Id: 5814858635094213307
     }
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17832993586013553019
@@ -97,6 +103,9 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Interactive Objects"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -130,6 +139,9 @@ Objects {
     IsFilePartition: true
     FilePartitionName: "Interactive Systems"
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 17890896660001401432
@@ -162,6 +174,9 @@ Objects {
     IsFilePartition: true
     FilePartitionName: "Definitions"
   }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
 }
 Objects {
   Id: 4282620061341822978
@@ -193,6 +208,9 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Environment"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
@@ -227,5 +245,8 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Gameplay Settings"
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }

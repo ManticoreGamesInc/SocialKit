@@ -3,6 +3,8 @@ Assets {
   Name: "RPFlyupText"
   PlatformAssetType: 3
   TextAsset {
+    CustomParameters {
+    }
   }
-  SerializationVersion: 101
+  SerializationVersion: 103
 }
