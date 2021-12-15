@@ -18,12 +18,12 @@ local elapsedTime = 0
 
 function Tick(deltaTime)
 	local percent = 0
-	
+
 	if duration > 0 then
 		elapsedTime = elapsedTime + deltaTime
 		percent = CoreMath.Clamp(elapsedTime / duration)
 	end
-	
+
 	PROGRESS_BAR:SetCustomProperty("Percent", percent)
 end
 
@@ -34,22 +34,24 @@ function UpdateLabel(value)
 		UI_TEXT.text = tostring(value)
 		return
 	end
-	local str = nil
-	while value > 0 do
-		local upto3digits = value % 1000
-		value = math.floor(value / 1000)
-		if str then
-			str = upto3digits .. "," .. str
-		else
-			str = tostring(upto3digits)
-		end
-	end
-	UI_TEXT.text = str
+	-- local str = nil
+	-- while value > 0 do
+	-- 	local upto3digits = value % 1000
+	-- 	value = math.floor(value / 1000)
+	-- 	if str then
+	-- 		str = upto3digits .. "," .. str
+	-- 	else
+	-- 		str = tostring(upto3digits)
+	-- 	end
+	-- end
+
+	-- Format the number with commas (i.e. 1,123)
+	UI_TEXT.text = tostring(value):reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
 end
 
 function OnResourceChanged(player, resName)
 	if resName ~= RESOURCE_NAME then return end
-	
+
 	local value = player:GetResource(resName)
 	UpdateLabel(value)
 end
