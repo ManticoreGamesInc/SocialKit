@@ -130,7 +130,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:ShowOnSelf"
-      Bool: false
+      Bool: true
     }
     Overrides {
       Name: "cs:MaxDistanceOnTeammates"
