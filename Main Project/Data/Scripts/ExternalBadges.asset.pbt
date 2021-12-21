@@ -5,12 +5,6 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:BadgeTemplate"
-        AssetReference {
-          Id: 7028705422916420455
-        }
-      }
-      Overrides {
         Name: "cs:GameId"
         String: "2dc7d7/metapanel-portraits"
       }

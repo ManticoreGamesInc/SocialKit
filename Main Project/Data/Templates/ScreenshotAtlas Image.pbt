@@ -1,13 +1,13 @@
 Assets {
   Id: 7028705422916420455
-  Name: "ExternalBadge Image"
+  Name: "ScreenshotAtlas Image"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 8704064110611031869
       Objects {
         Id: 8704064110611031869
-        Name: "ExternalBadge Image"
+        Name: "ScreenshotAtlas Image"
         Transform {
           Scale {
             X: 1
@@ -92,7 +92,7 @@ Assets {
           }
           Image {
             Brush {
-              Id: 13283651223571409623
+              Id: 11075147620996366415
             }
             Color {
               R: 1
@@ -128,12 +128,12 @@ Assets {
       }
     }
     Assets {
-      Id: 13283651223571409623
-      Name: "Fantasy Ability Blue 016"
+      Id: 11075147620996366415
+      Name: "BG Highlighted 001"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Ability_Blue_016"
+        AssetId: "BackgroundHighlighted_020"
       }
     }
     PrimaryAssetId {

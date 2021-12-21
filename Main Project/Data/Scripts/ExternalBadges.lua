@@ -1,8 +1,18 @@
+--[[
+	External Badges
+	v1.0
+	by: standardcombo
+	
+	External Badges depend on the 'Screenshot Atlas' component, for loading images from
+	the screenshots of another published game.
+	
+	Optional interface: _G.RuntimeBadges.GetBadges(player)
+		This function can be implemented to return a table of badge IDs, if given a player.
+--]]
 
 local API = {}
 _G.ExternalBadges = API
 
-local BADGE_TEMPLATE = script:GetCustomProperty("BadgeTemplate")
 local GAME_ID = script:GetCustomProperty("GameId")
 
 local badges = {}
@@ -12,58 +22,58 @@ local isLoaded = false
 
 
 function API.GetBadges(player, size)
+	if not _G.ScreenshotAtlas then
+		error("'External Badges' depends on the 'Screenshot Atlas' component.")
+	end
+	
 	while not isLoaded do
 		Task.Wait()
 		if not Object.IsValid(player) then return end
 	end
+		
+	local badgeImages = {}
 	
+	-- _G.RuntimeBadges is an interface for badges to be assigned to players at runtime.
+	-- This way, there's no need to edit and republish the badges project.
+	local runtimeBadgeDict = {}
+	if _G.RuntimeBadges then
+		local runtimeBadgeIds = _G.RuntimeBadges.GetBadges(player)
+		for _,badgeId in ipairs(runtimeBadgeIds) do
+			runtimeBadgeDict[badgeId] = true
+			
+			local image = SpawnBadgeImage(badgeId, size)
+			if image then
+				table.insert(badgeImages, image)
+			end
+		end
+	end
+	
+	-- Load badges that are set for this player in the badges project's description.
 	local playerName = string.lower(player.name)
 	local entry = people[playerName]
 	
-	if not entry then return nil end
-	
-	local badgeImages = {}
+	if not entry then return badgeImages end
 	
 	for _,badgeId in ipairs(entry) do
-		local badgeData = badges[badgeId]
-		if badgeData then
-			local image = World.SpawnAsset(BADGE_TEMPLATE)
-			table.insert(badgeImages, image)
-			
-			image.width = size
-			image.height = size
-			
-			image = image:GetChildren()[1]
-			
-			SetupImage(image, GAME_ID, badgeData.screenshotIndex, badgeData.atlasIndex, size)
-		else
-			warn("Did not find data for badge " .. badgeId)
+		-- Avoid adding duplicates
+		if not runtimeBadgeDict[badgeId] then
+			local image = SpawnBadgeImage(badgeId, size)
+			if image then
+				table.insert(badgeImages, image)
+			end
 		end
 	end
 	return badgeImages
 end
 
-
-function SetupImage(image, gameId, screenshotIndex, atlasIndex, size)
-	image:SetGameScreenshot(gameId, screenshotIndex)
-	-- W & H
-	image.width = math.ceil(size * 3.55555)
-	image.height = math.ceil(size * 2)
-	-- X
-	if atlasIndex == 1 or atlasIndex == 4 then
-		image.x = 0
-	
-	elseif atlasIndex == 2 or atlasIndex == 5 then
-		image.x = -size
+function SpawnBadgeImage(badgeId, size)
+	local badgeData = badges[badgeId]
+	if badgeData then
+		return _G.ScreenshotAtlas.SpawnImage(GAME_ID, badgeData.screenshotIndex, badgeData.atlasIndex, size)
 	else
-		image.x = -(size * 2)
+		warn("Did not find data for badge " .. badgeId)
 	end
-	-- Y
-	if atlasIndex == 1 or atlasIndex == 2 or atlasIndex == 3 then
-		image.y = 0
-	else
-		image.y = -size
-	end
+	return nil
 end
 
 

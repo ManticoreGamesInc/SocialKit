@@ -51,6 +51,7 @@ Objects {
   }
   ParentId: 2522544622353355839
   ChildIds: 13143837673385793497
+  ChildIds: 5365250868672961213
   ChildIds: 2649142462017772862
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -106,6 +107,42 @@ Objects {
   Script {
     ScriptAsset {
       Id: 1623366338472214926
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 5365250868672961213
+  Name: "ScreenshotAtlas"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12298241965619050853
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1582680070696048005
     }
   }
   NetworkRelevanceDistance {
