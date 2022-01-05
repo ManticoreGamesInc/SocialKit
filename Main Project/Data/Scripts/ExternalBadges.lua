@@ -69,7 +69,13 @@ end
 function SpawnBadgeImage(badgeId, size)
 	local badgeData = badges[badgeId]
 	if badgeData then
-		return _G.ScreenshotAtlas.SpawnImage(GAME_ID, badgeData.screenshotIndex, badgeData.atlasIndex, size)
+		local params = {
+			gameId = GAME_ID, 
+			screenshotIndex = badgeData.screenshotIndex, 
+			atlasIndex = badgeData.atlasIndex,
+			imageSize = size
+		}
+		return _G.ScreenshotAtlas.SpawnImage(params)
 	else
 		warn("Did not find data for badge " .. badgeId)
 	end
