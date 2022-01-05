@@ -19,6 +19,7 @@ Objects {
   ChildIds: 17890896660001401432
   ChildIds: 2522544622353355839
   ChildIds: 17832993586013553019
+  ChildIds: 11718101428310070358
   ChildIds: 7798052427219841836
   UnregisteredParameters {
   }
@@ -68,6 +69,41 @@ Objects {
     ScriptAsset {
       Id: 5814858635094213307
     }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 11718101428310070358
+  Name: "Global Message"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Global Message"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

@@ -44,6 +44,10 @@ Assets {
         Int: 850
       }
       Overrides {
+        Name: "cs:ShowCursor"
+        Bool: true
+      }
+      Overrides {
         Name: "cs:MainPanel:isrep"
         Bool: false
       }
@@ -90,6 +94,10 @@ Assets {
       Overrides {
         Name: "cs:MainPanel:tooltip"
         String: "Reference to the main UI Panel that will be animated in/out."
+      }
+      Overrides {
+        Name: "cs:ShowCursor:tooltip"
+        String: "If true, the mouse cursor will appear when this popup appears and will disappear when the popup is hidden."
       }
     }
   }
