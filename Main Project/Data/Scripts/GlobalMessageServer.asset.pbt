@@ -8,6 +8,14 @@ Assets {
         Name: "cs:Admins"
         String: "standardcombo,Bot1"
       }
+      Overrides {
+        Name: "cs:ConcurrentKey"
+        NetReference {
+          Type {
+            Value: "mc:enetreferencetype:unknown"
+          }
+        }
+      }
     }
   }
   SerializationVersion: 103

@@ -6,6 +6,7 @@
 --]]
 
 local ADMINS_CSS = script:GetCustomProperty("Admins")
+local CONCURRENT_KEY = script:GetCustomProperty("ConcurrentKey")
 
 local COMMAND = "/broadcast"
 
@@ -35,20 +36,92 @@ function OnReceiveMessageHook(player, params)
 	params.message = ""
 		
 	local msg = string.sub(message, commandLen + 1)
+	msg = player.name .. " says:\n" .. msg
 	
 	-- We need to spawn task because yielding the thread is not allowed inside a hook
 	Task.Spawn(function()
-		if not Object.IsValid(player) then return end
-		
-		Send(player.name, msg)
+		Send(msg)
 	end)
 end
 
 Chat.receiveMessageHook:Connect(OnReceiveMessageHook)
 
+local SECONDS_TOLERANCE = 10
 
-function Send(playerName, msg)
-	msg = playerName .. " says:\n" .. msg
+
+function Send(msg)
+	if not CONCURRENT_KEY.isAssigned then
+		DoBroadcast(msg)
+	else
+		local timestamp = DateTime.CurrentTime().secondsSinceEpoch
+		
+		-- Add the message
+		while Storage.HasPendingSetConcurrentCreatorData(CONCURRENT_KEY) do
+			Task.Wait(0.1)
+		end
+		local _, result = Storage.SetConcurrentCreatorData(CONCURRENT_KEY, function(data)
+			if not data.messages then
+				data.messages = {}
+			else
+				-- Clear previous messages that are outdated
+				for ts,msg in pairs(data.messages) do
+					if timestamp - ts >= SECONDS_TOLERANCE then
+						data.messages[ts] = nil
+					end
+				end
+			end
+			data.messages[timestamp] = msg
+			return data
+		end)
+		
+		if result ~= StorageResultCode.SUCCESS then return end
+		
+		Task.Wait(5)
+		
+		-- Clear the message
+		while Storage.HasPendingSetConcurrentCreatorData(CONCURRENT_KEY) do
+			Task.Wait(0.1)
+		end
+		Storage.SetConcurrentCreatorData(CONCURRENT_KEY, function(data)
+			data.messages[timestamp] = nil
+			return data
+		end)
+	end
+end
+
+
+function DoBroadcast(msg)
 	Events.BroadcastToAllPlayers("ShowGlobalMessage", msg)
 end
+
+
+local messagesAlreadyBroadcast = {}
+function OnConcurrentDataChanged(_, data)
+	if not data.messages then return end
+	
+	local timestamp = DateTime.CurrentTime().secondsSinceEpoch
+	
+	for ts,msg in pairs(data.messages) do
+		alreadySentKey = tostring(ts) .. msg
+		
+		if timestamp - ts < SECONDS_TOLERANCE 
+		and not messagesAlreadyBroadcast[alreadySentKey] then
+			DoBroadcast(msg)
+			messagesAlreadyBroadcast[alreadySentKey] = true
+		end
+	end
+end
+
+if CONCURRENT_KEY.isAssigned then
+	Storage.ConnectToConcurrentCreatorDataChanged(CONCURRENT_KEY, OnConcurrentDataChanged)
+	
+	-- When this server instance comes online, fetch the latest data right away
+	Task.Wait(1)
+	local data, result = Storage.GetConcurrentCreatorData(CONCURRENT_KEY)
+	if result == StorageResultCode.SUCCESS then
+		OnConcurrentDataChanged(_, data)
+	end
+end
+
+
 

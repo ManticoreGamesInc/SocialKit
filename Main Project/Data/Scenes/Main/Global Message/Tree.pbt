@@ -463,6 +463,17 @@ Objects {
     }
   }
   ParentId: 11718101428310070358
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ConcurrentKey"
+      NetReference {
+        Key: "4c7a8e1b7f7d407098fe6c3dcc3cd252"
+        Type {
+          Value: "mc:enetreferencetype:concurrentpersistence"
+        }
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
