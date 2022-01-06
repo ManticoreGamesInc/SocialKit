@@ -19,7 +19,7 @@ Objects {
   ChildIds: 17890896660001401432
   ChildIds: 2522544622353355839
   ChildIds: 17832993586013553019
-  ChildIds: 11718101428310070358
+  ChildIds: 5261690548160154952
   ChildIds: 7798052427219841836
   UnregisteredParameters {
   }
@@ -75,13 +75,9 @@ Objects {
   }
 }
 Objects {
-  Id: 11718101428310070358
+  Id: 5261690548160154952
   Name: "Global Message"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -89,24 +85,19 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Global Message"
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 12358654052503786491
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Global Message"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 10200175046261501329
+    }
   }
 }
 Objects {

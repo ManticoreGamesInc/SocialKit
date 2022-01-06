@@ -1,7 +1,9 @@
 --[[
-	Global Message - Dialog
-	by: standardcombo
+	Global Message - Client
 	v1.0
+	by: standardcombo
+	
+	See the README and property tooltips for more information about this component.
 --]]
 
 local MODAL = script:GetCustomProperty("ModalPopup"):WaitForObject()
@@ -9,23 +11,28 @@ local MAIN_PANEL = MODAL:GetCustomProperty("MainPanel"):WaitForObject()
 
 MODAL = MODAL.context
 
-local UI_TEXT = script:GetCustomProperty("UIText"):WaitForObject()
+local TITLE_TEXT = script:GetCustomProperty("TitleText"):WaitForObject()
+local MESSAGE_TEXT = script:GetCustomProperty("MessageText"):WaitForObject()
+
 local SHOW_DURATION = script:GetCustomProperty("ShowDuration")
+local PADDING = script:GetCustomProperty("Padding")
 
 local MIN_WIDTH = MAIN_PANEL.width
-local PADDING = MIN_WIDTH - UI_TEXT.width
 
 local showCount = 0
 
 
-function OnShowGlobalMessage(message)
-	UI_TEXT.text = message
+function OnShowGlobalMessage(msg)
+	title, message = CoreString.Split(msg, "\n")
+	TITLE_TEXT.text = title
+	MESSAGE_TEXT.text = message
 	
-	Task.Wait()
-	local size = UI_TEXT:ComputeApproximateSize()
-	if size then
-		MAIN_PANEL.width = math.max(MIN_WIDTH, size.x + PADDING)
+	local size = MESSAGE_TEXT:ComputeApproximateSize()
+	while size == nil do
+		Task.Wait()
+		size = MESSAGE_TEXT:ComputeApproximateSize()
 	end
+	MAIN_PANEL.width = math.max(MIN_WIDTH, size.x + PADDING)
 	
 	MODAL.Show()
 	
@@ -41,12 +48,4 @@ function OnShowGlobalMessage(message)
 end
 
 Events.Connect("ShowGlobalMessage", OnShowGlobalMessage)
-
---[[
-Game.GetLocalPlayer().bindingPressedEvent:Connect(function(player, action)
-	if action == "ability_extra_0" then
-		OnShowGlobalMessage("standardcombo says:\nFoo asdlkjalk asdflkjasdlkkj las jlasdjjaf a a. haslhjk lashashk lhlahl ash hsldhf l alshkh oq uqoui lj")
-	end
-end)--]]
-
 

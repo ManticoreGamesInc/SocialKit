@@ -3,10 +3,11 @@
 	v1.0
 	by: standardcombo
 	
+	See the README and property tooltips for more information about this component.
 --]]
 
-local ADMINS_CSS = script:GetCustomProperty("Admins")
 local CONCURRENT_KEY = script:GetCustomProperty("ConcurrentKey")
+local ADMINS_CSS = script:GetCustomProperty("Admins")
 
 local COMMAND = "/broadcast"
 
@@ -21,8 +22,14 @@ end
 
 
 function OnReceiveMessageHook(player, params)
-	local name = string.lower(player.name)
-	if not ADMINS[name] then return end
+	if _G.Permissions then
+		if not _G.Permissions.HasPermission("Broadcast") then
+			return
+		end
+	else
+		local name = string.lower(player.name)
+		if not ADMINS[name] then return end
+	end
 	
 	local message = params.message
 	local commandLen = string.len(COMMAND)
@@ -34,7 +41,7 @@ function OnReceiveMessageHook(player, params)
 	
 	-- Don't show the command in chat
 	params.message = ""
-		
+	
 	local msg = string.sub(message, commandLen + 1)
 	msg = player.name .. " says:\n" .. msg
 	
