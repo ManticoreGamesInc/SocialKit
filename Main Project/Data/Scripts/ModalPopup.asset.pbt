@@ -30,6 +30,11 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:HideSFX"
+        ObjectReference {
+        }
+      }
+      Overrides {
         Name: "cs:FadeColor"
         Color {
           A: 0.5
@@ -98,6 +103,10 @@ Assets {
       Overrides {
         Name: "cs:ShowCursor:tooltip"
         String: "If true, the mouse cursor will appear when this popup appears and will disappear when the popup is hidden."
+      }
+      Overrides {
+        Name: "cs:HideSFX:tooltip"
+        String: "Sound to play when the modal becomes hidden, regardless of how it became hidden."
       }
     }
   }

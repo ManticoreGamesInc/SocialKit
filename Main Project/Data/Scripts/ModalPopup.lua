@@ -1,7 +1,7 @@
 --[[
 	Modal Popup
-	by: standardcombo
 	v1.1
+	by: standardcombo
 --]]
 
 local MAIN_PANEL = script:GetCustomProperty("MainPanel"):WaitForObject()
@@ -9,6 +9,7 @@ local OUTSIDE_BUTTON = script:GetCustomProperty("OutsideButton"):WaitForObject()
 local CLOSE_BUTTON = script:GetCustomProperty("CloseButton"):WaitForObject()
 local OPEN_SFX = script:GetCustomProperty("OpenSFX"):GetObject()
 local CLOSE_SFX = script:GetCustomProperty("CloseSFX"):GetObject()
+local HIDE_SFX = script:GetCustomProperty("HideSFX"):GetObject()
 local FADE_COLOR = script:GetCustomProperty("FadeColor")
 local MOVE_SPEED = script:GetCustomProperty("MoveSpeed")
 local OFF_Y = script:GetCustomProperty("OffScreenY")
@@ -35,6 +36,9 @@ function Hide()
 	if currentState == STATE_IN
 	or currentState == STATE_IDLE
 	then
+		if HIDE_SFX then
+			HIDE_SFX:Play()
+		end
 		SetState(STATE_OUT)
 		Events.Broadcast("ModalHidden", script.context)
 	end
